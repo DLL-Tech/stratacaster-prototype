@@ -1,0 +1,56 @@
+{
+  "config_version": "prototype-config/1.1",
+  "dataset": "roster",
+  "dataset_note": "roster = notional organizational roster workbook v2 (demonstration data, imported by scripts/import_roster.py); guide = Build Guide conformance fixtures (used by the test suite and the labeled evaluation). Override with STRATACASTER_DATASET.",
+  "datasets": {
+    "roster": {"registry": "data/fixtures/roster/reference_registry.json", "msr_cases": "data/fixtures/roster/msr_cases.json"},
+    "guide": {"registry": "data/fixtures/reference_registry.json", "msr_cases": "data/fixtures/msr_cases.json"}
+  },
+  "paths": {
+    "var_dir": "var",
+    "agent_registry": "config/agent_registry.json",
+    "prompts": "stratacaster/prompts"
+  },
+  "clock": {
+    "fixed": "2026-10-16T13:55:00Z",
+    "note": "Fixed demo clock for reproducibility. Set to null to use system time."
+  },
+  "evidence": {
+    "freshness_days": 31,
+    "default_audience_ids": ["SYN-SOLUTIONS-DEMO"],
+    "default_purposes": ["requirement-evidence-explanation"],
+    "default_restrictions": ["prototype-only", "no-external-use", "no-personnel-ranking"],
+    "transformation_version": "prototype-align/1.0"
+  },
+  "llm": {
+    "mode": "auto",
+    "mode_note": "auto = Claude when ANTHROPIC_API_KEY or ANTHROPIC_AUTH_TOKEN is set, otherwise the deterministic mock. Override with STRATACASTER_LLM_MODE=mock|claude.",
+    "model": "claude-opus-5-5",
+    "effort": "medium",
+    "timeout_s": 120,
+    "max_attempts": 2,
+    "price_per_mtok": {"input": 4.0, "output": 20.0}
+  },
+  "feedback_check": {
+    "mode": "local",
+    "mode_note": "Employee feedback before MSR submission (PR-30). local = free: keyword hits plus local embedding similarity, no model call; the result is preliminary and the Role Execution Agent assesses at submission, including the recommended new task the TTO lead sees. hybrid = deployment option: the same free alignment plus one call to the small model below that writes recommended new tasks for unmatched statements only, so the employee sees them before submitting. model = deployment option: the full Role Execution Agent check (main model), reused at submission. Override with STRATACASTER_FEEDBACK_MODE.",
+    "similarity_threshold": 0.45,
+    "max_tasks_per_statement": 2,
+    "elsewhere_floor": 0.40,
+    "ttl_minutes": 60,
+    "hybrid_llm": {
+      "model": "claude-haiku-5-5",
+      "effort": "low",
+      "price_per_mtok": {"input": 0.10, "output": 0.50},
+      "price_note": "Claude Haiku 5.5 list price for prompts of 100K tokens or fewer; confirm current pricing before deployment."
+    }
+  },
+  "governance": {
+    "management_authority_covers_own_msr": false,
+    "note": "Separation of duties. false: a person's management authority (Delivery operator, PMO reviewer) does not apply to their own MSR or to evidence derived from it; they act on it only as an employee. Set true to allow it."
+  },
+  "routing": {
+    "solutions_reviewer": "SYN-SOLUTIONS-USER-001",
+    "delivery_review_owner": "SYN-DELIVERY-OPS-001"
+  }
+}

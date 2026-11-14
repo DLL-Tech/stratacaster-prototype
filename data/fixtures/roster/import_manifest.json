@@ -1,0 +1,33 @@
+{
+ "import_version": "roster-import/1.1",
+ "source_file": "StrataCaster_Notional_Organizational_Roster_270_Employees_v3.xlsx",
+ "source_sha256": "875ff7420c3eb49af154b18861abbebc1cfb4faad42a4355503ada647d912895",
+ "counts": {
+  "employees": 270,
+  "delivery_employees": 220,
+  "task_orders": 13,
+  "req_tasks": 135,
+  "role_reqs": 86,
+  "users": 229,
+  "delivery_msrs": 440,
+  "test_cases": 10
+ },
+ "rules": [
+  "Company-staff MSRs (Prototype Scope = Outside prototype) are not imported.",
+  "Bullets are joined into raw_narrative, which stays in the Delivery store.",
+  "Contract PMO staff map to SIM-TTO-<n>-PMO (direct contract assignment). Its REQ tasks (SIM-REQ-<n>-PMO-01..07) come from Volume 02 \u00a73 program-management responsibilities; a PMO teammate other than the author reviews their MSRs in place of a TTO lead.",
+  "role_task_id is RT-<WR>; LR- leadership roles have no REQ eligibility.",
+  "Each employee is the reviewer of their own MSR; review is applied in the prototype, never at load.",
+  "TTO leads are the Technical Directors in Contract Task Orders; each may review only MSRs from employees in the TTO(s) they lead, including their own MSR.",
+  "Each contract's PMO team (Program Manager, Deputy Program Manager, Operations Manager, three Portfolio Leads) holds PMO review authority for that contract's PMO; the Program Manager is the primary reviewer. Like HR and other function staff, PMO staff are not aligned to a task order; their MSRs (v3) describe PMO work across the contract and map to SIM-TTO-<n>-PMO.",
+  "Each work role in a TTO has an individual REQ (SIM-REQ-<c>-<tt>-<WR>) generated from the Requirement Tasks tab."
+ ],
+ "default_demo_scope": {
+  "contracts": [
+   "SIM-FC-001"
+  ],
+  "months": [
+   "2026-10"
+  ]
+ }
+}

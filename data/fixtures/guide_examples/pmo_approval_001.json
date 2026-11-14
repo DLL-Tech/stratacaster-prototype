@@ -1,0 +1,26 @@
+{
+  "schema_version": "prototype-pmo-approval-event/1.0",
+  "event_id": "SYN-PMO-APPROVAL-001",
+  "data_mode": "synthetic",
+  "event_type": "pmo_evidence_approval",
+  "record_id": "SYN-EVID-001",
+  "record_version": 1,
+  "owning_pmo_id": "SYN-PMO-001",
+  "delivery_scope_id": "SYN-DELIVERY-A",
+  "decision": "approved",
+  "approver_id": "SYN-REVIEWER-PMO-001",
+  "approver_role": "human_pmo_reviewer",
+  "decided_at": "2026-10-16T16:15:00Z",
+  "employee_review_ref": {"input_id": "SYN-MSR-001", "input_version": 1, "reviewer_id": "SYN-REVIEWER-EMP-001", "reviewed_at": "2026-10-16T15:00:00Z", "status": "accepted"},
+  "approved_scope": {
+    "audience_ids": ["SYN-SOLUTIONS-DEMO"],
+    "permitted_purposes": ["requirement-evidence-explanation"],
+    "restrictions": ["prototype-only", "no-external-use", "no-personnel-ranking"],
+    "expires_at": "2026-11-16T16:00:00Z"
+  },
+  "validation_snapshot": {"schema_valid": true, "references_valid": true, "source_current": true, "employee_review_current": true, "content_filter_passed": true, "blocking_exceptions": []},
+  "decision_reason": "Fictional reviewer approves the minimized synthetic task-evidence summary for the specified demonstration audience and purpose.",
+  "correlation_id": "SYN-WORKFLOW-PUBLISH-001",
+  "publication_authorized": true,
+  "publication_executed": false
+}

@@ -1,0 +1,836 @@
+{
+  "plan_id": "SIM-RQP-63BB00494E",
+  "planner_version": "req-planner/0.1.0",
+  "role_req_id": "SIM-REQ-1-01-WR-001",
+  "role_id": "WR-001",
+  "tto_id": "SIM-TTO-1-01",
+  "period": "2026-10",
+  "created_at": "2026-10-23T17:00:00Z",
+  "requested_by": "SIM-EMP-002",
+  "review_basis": "tto-lead",
+  "agent_id": "AGT-TTO-COORDINATION",
+  "prompt_version": "req_planning_v1",
+  "model": {
+    "llm_mode": "mock",
+    "model": "mock-deterministic/1.0",
+    "latency_ms": 0,
+    "input_tokens": 0,
+    "output_tokens": 0,
+    "cost_usd": 0.0
+  },
+  "params": {
+    "beam_width": 3,
+    "max_depth": 3,
+    "node_budget": 60,
+    "prune_below": 0.35,
+    "cluster_jaccard": 0.6,
+    "overlap_jaccard": 0.6,
+    "max_req_size": 10,
+    "new_req_min_employees": 3,
+    "change_min_employees": 2,
+    "route_min_statements": 2
+  },
+  "weights": {
+    "coverage": 0.35,
+    "evidence": 0.2,
+    "distinctness": 0.15,
+    "parsimony": 0.2,
+    "wording": 0.1
+  },
+  "baseline_req_task_ids": [
+    "SIM-REQ-1-01-01",
+    "SIM-REQ-1-01-02",
+    "SIM-REQ-1-01-03",
+    "SIM-REQ-1-01-04",
+    "SIM-REQ-1-01-05",
+    "SIM-REQ-1-01-06",
+    "SIM-REQ-1-01-07"
+  ],
+  "clusters": [
+    {
+      "cluster_id": "C1",
+      "statement_ids": [
+        "SIM-STMT-202610-005-V1-2",
+        "SIM-STMT-202610-010-V1-2"
+      ],
+      "input_ids": [
+        "SIM-MSR-202610-005",
+        "SIM-MSR-202610-010"
+      ],
+      "employees": 2,
+      "label": "explain follow items notes",
+      "elsewhere": []
+    },
+    {
+      "cluster_id": "C2",
+      "statement_ids": [
+        "SIM-STMT-202610-005-V1-5",
+        "SIM-STMT-202610-010-V1-5"
+      ],
+      "input_ids": [
+        "SIM-MSR-202610-005",
+        "SIM-MSR-202610-010"
+      ],
+      "employees": 2,
+      "label": "checked feedback included noted received",
+      "elsewhere": []
+    },
+    {
+      "cluster_id": "C3",
+      "statement_ids": [
+        "SIM-STMT-202610-006-V1-2"
+      ],
+      "input_ids": [
+        "SIM-MSR-202610-006"
+      ],
+      "employees": 1,
+      "label": "colleague compared handoff results writing",
+      "elsewhere": []
+    },
+    {
+      "cluster_id": "C4",
+      "statement_ids": [
+        "SIM-STMT-202610-006-V1-5"
+      ],
+      "input_ids": [
+        "SIM-MSR-202610-006"
+      ],
+      "employees": 1,
+      "label": "conclusions observations separate support uncertain",
+      "elsewhere": []
+    },
+    {
+      "cluster_id": "C5",
+      "statement_ids": [
+        "SIM-STMT-202610-007-V1-2"
+      ],
+      "input_ids": [
+        "SIM-MSR-202610-007"
+      ],
+      "employees": 1,
+      "label": "added description examples misunderstood original",
+      "elsewhere": []
+    },
+    {
+      "cluster_id": "C6",
+      "statement_ids": [
+        "SIM-STMT-202610-007-V1-5"
+      ],
+      "input_ids": [
+        "SIM-MSR-202610-007"
+      ],
+      "employees": 1,
+      "label": "checks claiming documented issue next",
+      "elsewhere": []
+    },
+    {
+      "cluster_id": "C7",
+      "statement_ids": [
+        "SIM-STMT-202610-008-V1-2"
+      ],
+      "input_ids": [
+        "SIM-MSR-202610-008"
+      ],
+      "employees": 1,
+      "label": "assumptions check depended needed noted",
+      "elsewhere": []
+    },
+    {
+      "cluster_id": "C8",
+      "statement_ids": [
+        "SIM-STMT-202610-008-V1-5"
+      ],
+      "input_ids": [
+        "SIM-MSR-202610-008"
+      ],
+      "employees": 1,
+      "label": "another flagged input needed parts",
+      "elsewhere": []
+    },
+    {
+      "cluster_id": "C9",
+      "statement_ids": [
+        "SIM-STMT-202610-009-V1-2"
+      ],
+      "input_ids": [
+        "SIM-MSR-202610-009"
+      ],
+      "employees": 1,
+      "label": "context left pick someone work",
+      "elsewhere": []
+    },
+    {
+      "cluster_id": "C10",
+      "statement_ids": [
+        "SIM-STMT-202610-009-V1-5"
+      ],
+      "input_ids": [
+        "SIM-MSR-202610-009"
+      ],
+      "employees": 1,
+      "label": "handoff marked notes open questions",
+      "elsewhere": []
+    }
+  ],
+  "searched_clusters": [
+    "C1",
+    "C2",
+    "C3"
+  ],
+  "deferred_clusters": [
+    "C4",
+    "C5",
+    "C6",
+    "C7",
+    "C8",
+    "C9",
+    "C10"
+  ],
+  "excluded_statements": [
+    {
+      "statement_id": "SIM-STMT-TEST-01-V1-2",
+      "input_id": "SIM-MSR-TEST-01",
+      "flags": [
+        "BLOCKING:possible-prompt-injection"
+      ]
+    }
+  ],
+  "options": {
+    "C1": [
+      {
+        "operator": "no-change",
+        "target_req_task_id": null,
+        "wording": "No REQ change",
+        "rationale": "Treat as coordination or one-off work, not a deliverable."
+      },
+      {
+        "operator": "add-task",
+        "target_req_task_id": null,
+        "wording": "Items explain notes follow record",
+        "rationale": "Recurring work with no matching task in this REQ."
+      },
+      {
+        "operator": "new-req",
+        "target_req_task_id": null,
+        "wording": "Items explain notes follow role scope",
+        "rationale": "Enough recurring work to justify a separate REQ."
+      }
+    ],
+    "C2": [
+      {
+        "operator": "no-change",
+        "target_req_task_id": null,
+        "wording": "No REQ change",
+        "rationale": "Treat as coordination or one-off work, not a deliverable."
+      },
+      {
+        "operator": "add-task",
+        "target_req_task_id": null,
+        "wording": "Feedback record",
+        "rationale": "Recurring work with no matching task in this REQ."
+      },
+      {
+        "operator": "new-req",
+        "target_req_task_id": null,
+        "wording": "Feedback role scope",
+        "rationale": "Enough recurring work to justify a separate REQ."
+      }
+    ],
+    "C3": [
+      {
+        "operator": "no-change",
+        "target_req_task_id": null,
+        "wording": "No REQ change",
+        "rationale": "Treat as coordination or one-off work, not a deliverable."
+      },
+      {
+        "operator": "add-task",
+        "target_req_task_id": null,
+        "wording": "Results colleague writing handoff record",
+        "rationale": "Recurring work with no matching task in this REQ."
+      },
+      {
+        "operator": "new-req",
+        "target_req_task_id": null,
+        "wording": "Results colleague writing handoff role scope",
+        "rationale": "Enough recurring work to justify a separate REQ."
+      }
+    ]
+  },
+  "agent_errors": [],
+  "plans": [
+    {
+      "rank": 1,
+      "plan_score": 0.88,
+      "key": "C1:add-task:- | C2:add-task:- | C3:no-change:-",
+      "node_id": "N10",
+      "decisions": [
+        {
+          "cluster_id": "C1",
+          "operator": "add-task",
+          "target_req_task_id": null,
+          "wording": "Items explain notes follow record",
+          "rationale": "Recurring work with no matching task in this REQ.",
+          "score": 0.8533,
+          "parts": {
+            "coverage": 1.0,
+            "evidence": 0.667,
+            "distinctness": 1.0,
+            "parsimony": 0.6,
+            "wording": 1.0
+          }
+        },
+        {
+          "cluster_id": "C2",
+          "operator": "add-task",
+          "target_req_task_id": null,
+          "wording": "Feedback record",
+          "rationale": "Recurring work with no matching task in this REQ.",
+          "score": 0.8533,
+          "parts": {
+            "coverage": 1.0,
+            "evidence": 0.667,
+            "distinctness": 1.0,
+            "parsimony": 0.6,
+            "wording": 1.0
+          }
+        },
+        {
+          "cluster_id": "C3",
+          "operator": "no-change",
+          "target_req_task_id": null,
+          "wording": "No REQ change",
+          "rationale": "Treat as coordination or one-off work, not a deliverable.",
+          "score": 0.9333,
+          "parts": {
+            "coverage": 1.0,
+            "evidence": 0.667,
+            "distinctness": 1.0,
+            "parsimony": 1.0,
+            "wording": 1.0
+          }
+        }
+      ]
+    },
+    {
+      "rank": 2,
+      "plan_score": 0.7678,
+      "key": "C1:add-task:- | C2:no-change:- | C3:no-change:-",
+      "node_id": "N13",
+      "decisions": [
+        {
+          "cluster_id": "C1",
+          "operator": "add-task",
+          "target_req_task_id": null,
+          "wording": "Items explain notes follow record",
+          "rationale": "Recurring work with no matching task in this REQ.",
+          "score": 0.8533,
+          "parts": {
+            "coverage": 1.0,
+            "evidence": 0.667,
+            "distinctness": 1.0,
+            "parsimony": 0.6,
+            "wording": 1.0
+          }
+        },
+        {
+          "cluster_id": "C2",
+          "operator": "no-change",
+          "target_req_task_id": null,
+          "wording": "No REQ change",
+          "rationale": "Treat as coordination or one-off work, not a deliverable.",
+          "score": 0.5167,
+          "parts": {
+            "coverage": 0.0,
+            "evidence": 0.333,
+            "distinctness": 1.0,
+            "parsimony": 1.0,
+            "wording": 1.0
+          }
+        },
+        {
+          "cluster_id": "C3",
+          "operator": "no-change",
+          "target_req_task_id": null,
+          "wording": "No REQ change",
+          "rationale": "Treat as coordination or one-off work, not a deliverable.",
+          "score": 0.9333,
+          "parts": {
+            "coverage": 1.0,
+            "evidence": 0.667,
+            "distinctness": 1.0,
+            "parsimony": 1.0,
+            "wording": 1.0
+          }
+        }
+      ]
+    },
+    {
+      "rank": 3,
+      "plan_score": 0.7678,
+      "key": "C1:no-change:- | C2:add-task:- | C3:no-change:-",
+      "node_id": "N16",
+      "decisions": [
+        {
+          "cluster_id": "C1",
+          "operator": "no-change",
+          "target_req_task_id": null,
+          "wording": "No REQ change",
+          "rationale": "Treat as coordination or one-off work, not a deliverable.",
+          "score": 0.5167,
+          "parts": {
+            "coverage": 0.0,
+            "evidence": 0.333,
+            "distinctness": 1.0,
+            "parsimony": 1.0,
+            "wording": 1.0
+          }
+        },
+        {
+          "cluster_id": "C2",
+          "operator": "add-task",
+          "target_req_task_id": null,
+          "wording": "Feedback record",
+          "rationale": "Recurring work with no matching task in this REQ.",
+          "score": 0.8533,
+          "parts": {
+            "coverage": 1.0,
+            "evidence": 0.667,
+            "distinctness": 1.0,
+            "parsimony": 0.6,
+            "wording": 1.0
+          }
+        },
+        {
+          "cluster_id": "C3",
+          "operator": "no-change",
+          "target_req_task_id": null,
+          "wording": "No REQ change",
+          "rationale": "Treat as coordination or one-off work, not a deliverable.",
+          "score": 0.9333,
+          "parts": {
+            "coverage": 1.0,
+            "evidence": 0.667,
+            "distinctness": 1.0,
+            "parsimony": 1.0,
+            "wording": 1.0
+          }
+        }
+      ]
+    }
+  ],
+  "trace": [
+    {
+      "node_id": "N0",
+      "parent": null,
+      "depth": 0,
+      "status": "root"
+    },
+    {
+      "node_id": "N1",
+      "parent": "N0",
+      "depth": 1,
+      "cluster_id": "C1",
+      "operator": "no-change",
+      "target_req_task_id": null,
+      "wording": "No REQ change",
+      "score": 0.5167,
+      "parts": {
+        "coverage": 0.0,
+        "evidence": 0.333,
+        "distinctness": 1.0,
+        "parsimony": 1.0,
+        "wording": 1.0
+      },
+      "status": "kept",
+      "plan_score": 0.5167
+    },
+    {
+      "node_id": "N2",
+      "parent": "N0",
+      "depth": 1,
+      "cluster_id": "C1",
+      "operator": "add-task",
+      "target_req_task_id": null,
+      "wording": "Items explain notes follow record",
+      "score": 0.8533,
+      "parts": {
+        "coverage": 1.0,
+        "evidence": 0.667,
+        "distinctness": 1.0,
+        "parsimony": 0.6,
+        "wording": 1.0
+      },
+      "status": "kept",
+      "plan_score": 0.8533
+    },
+    {
+      "node_id": "N3",
+      "parent": "N0",
+      "depth": 1,
+      "cluster_id": "C1",
+      "operator": "new-req",
+      "target_req_task_id": null,
+      "wording": "Items explain notes follow role scope",
+      "status": "pruned",
+      "reason": "new-req: needs at least 3 employees (cluster has 2)"
+    },
+    {
+      "node_id": "N4",
+      "parent": "N2",
+      "depth": 2,
+      "cluster_id": "C2",
+      "operator": "no-change",
+      "target_req_task_id": null,
+      "wording": "No REQ change",
+      "score": 0.5167,
+      "parts": {
+        "coverage": 0.0,
+        "evidence": 0.333,
+        "distinctness": 1.0,
+        "parsimony": 1.0,
+        "wording": 1.0
+      },
+      "status": "kept",
+      "plan_score": 0.685
+    },
+    {
+      "node_id": "N5",
+      "parent": "N2",
+      "depth": 2,
+      "cluster_id": "C2",
+      "operator": "add-task",
+      "target_req_task_id": null,
+      "wording": "Feedback record",
+      "score": 0.8533,
+      "parts": {
+        "coverage": 1.0,
+        "evidence": 0.667,
+        "distinctness": 1.0,
+        "parsimony": 0.6,
+        "wording": 1.0
+      },
+      "status": "kept",
+      "plan_score": 0.8533
+    },
+    {
+      "node_id": "N6",
+      "parent": "N2",
+      "depth": 2,
+      "cluster_id": "C2",
+      "operator": "new-req",
+      "target_req_task_id": null,
+      "wording": "Feedback role scope",
+      "status": "pruned",
+      "reason": "new-req: needs at least 3 employees (cluster has 2)"
+    },
+    {
+      "node_id": "N7",
+      "parent": "N1",
+      "depth": 2,
+      "cluster_id": "C2",
+      "operator": "no-change",
+      "target_req_task_id": null,
+      "wording": "No REQ change",
+      "score": 0.5167,
+      "parts": {
+        "coverage": 0.0,
+        "evidence": 0.333,
+        "distinctness": 1.0,
+        "parsimony": 1.0,
+        "wording": 1.0
+      },
+      "status": "beam-cut",
+      "plan_score": 0.5167
+    },
+    {
+      "node_id": "N8",
+      "parent": "N1",
+      "depth": 2,
+      "cluster_id": "C2",
+      "operator": "add-task",
+      "target_req_task_id": null,
+      "wording": "Feedback record",
+      "score": 0.8533,
+      "parts": {
+        "coverage": 1.0,
+        "evidence": 0.667,
+        "distinctness": 1.0,
+        "parsimony": 0.6,
+        "wording": 1.0
+      },
+      "status": "kept",
+      "plan_score": 0.685
+    },
+    {
+      "node_id": "N9",
+      "parent": "N1",
+      "depth": 2,
+      "cluster_id": "C2",
+      "operator": "new-req",
+      "target_req_task_id": null,
+      "wording": "Feedback role scope",
+      "status": "pruned",
+      "reason": "new-req: needs at least 3 employees (cluster has 2)"
+    },
+    {
+      "node_id": "N10",
+      "parent": "N5",
+      "depth": 3,
+      "cluster_id": "C3",
+      "operator": "no-change",
+      "target_req_task_id": null,
+      "wording": "No REQ change",
+      "score": 0.9333,
+      "parts": {
+        "coverage": 1.0,
+        "evidence": 0.667,
+        "distinctness": 1.0,
+        "parsimony": 1.0,
+        "wording": 1.0
+      },
+      "status": "kept",
+      "plan_score": 0.88
+    },
+    {
+      "node_id": "N11",
+      "parent": "N5",
+      "depth": 3,
+      "cluster_id": "C3",
+      "operator": "add-task",
+      "target_req_task_id": null,
+      "wording": "Results colleague writing handoff record",
+      "score": 0.4117,
+      "parts": {
+        "coverage": 0.0,
+        "evidence": 0.333,
+        "distinctness": 0.833,
+        "parsimony": 0.6,
+        "wording": 1.0
+      },
+      "status": "beam-cut",
+      "plan_score": 0.7061
+    },
+    {
+      "node_id": "N12",
+      "parent": "N5",
+      "depth": 3,
+      "cluster_id": "C3",
+      "operator": "new-req",
+      "target_req_task_id": null,
+      "wording": "Results colleague writing handoff role scope",
+      "status": "pruned",
+      "reason": "new-req: needs at least 3 employees (cluster has 1)"
+    },
+    {
+      "node_id": "N13",
+      "parent": "N4",
+      "depth": 3,
+      "cluster_id": "C3",
+      "operator": "no-change",
+      "target_req_task_id": null,
+      "wording": "No REQ change",
+      "score": 0.9333,
+      "parts": {
+        "coverage": 1.0,
+        "evidence": 0.667,
+        "distinctness": 1.0,
+        "parsimony": 1.0,
+        "wording": 1.0
+      },
+      "status": "kept",
+      "plan_score": 0.7678
+    },
+    {
+      "node_id": "N14",
+      "parent": "N4",
+      "depth": 3,
+      "cluster_id": "C3",
+      "operator": "add-task",
+      "target_req_task_id": null,
+      "wording": "Results colleague writing handoff record",
+      "score": 0.4117,
+      "parts": {
+        "coverage": 0.0,
+        "evidence": 0.333,
+        "distinctness": 0.833,
+        "parsimony": 0.6,
+        "wording": 1.0
+      },
+      "status": "beam-cut",
+      "plan_score": 0.5939
+    },
+    {
+      "node_id": "N15",
+      "parent": "N4",
+      "depth": 3,
+      "cluster_id": "C3",
+      "operator": "new-req",
+      "target_req_task_id": null,
+      "wording": "Results colleague writing handoff role scope",
+      "status": "pruned",
+      "reason": "new-req: needs at least 3 employees (cluster has 1)"
+    },
+    {
+      "node_id": "N16",
+      "parent": "N8",
+      "depth": 3,
+      "cluster_id": "C3",
+      "operator": "no-change",
+      "target_req_task_id": null,
+      "wording": "No REQ change",
+      "score": 0.9333,
+      "parts": {
+        "coverage": 1.0,
+        "evidence": 0.667,
+        "distinctness": 1.0,
+        "parsimony": 1.0,
+        "wording": 1.0
+      },
+      "status": "kept",
+      "plan_score": 0.7678
+    },
+    {
+      "node_id": "N17",
+      "parent": "N8",
+      "depth": 3,
+      "cluster_id": "C3",
+      "operator": "add-task",
+      "target_req_task_id": null,
+      "wording": "Results colleague writing handoff record",
+      "score": 0.4117,
+      "parts": {
+        "coverage": 0.0,
+        "evidence": 0.333,
+        "distinctness": 0.833,
+        "parsimony": 0.6,
+        "wording": 1.0
+      },
+      "status": "beam-cut",
+      "plan_score": 0.5939
+    },
+    {
+      "node_id": "N18",
+      "parent": "N8",
+      "depth": 3,
+      "cluster_id": "C3",
+      "operator": "new-req",
+      "target_req_task_id": null,
+      "wording": "Results colleague writing handoff role scope",
+      "status": "pruned",
+      "reason": "new-req: needs at least 3 employees (cluster has 1)"
+    }
+  ],
+  "nodes_generated": 18,
+  "budget_exhausted": false,
+  "depth_reached": 3,
+  "recommended_rank": 1,
+  "status": "approved",
+  "approval_authority": "SIM-PMO-FC-001",
+  "baseline_changed": false,
+  "tto_decision": {
+    "plan_id": "SIM-RQP-63BB00494E",
+    "stage": "tto",
+    "decision": "endorsed",
+    "plan_rank": 1,
+    "endorsed_plan": {
+      "rank": 1,
+      "plan_score": 0.88,
+      "key": "C1:add-task:- | C2:add-task:- | C3:no-change:-",
+      "node_id": "N10",
+      "decisions": [
+        {
+          "cluster_id": "C1",
+          "operator": "add-task",
+          "target_req_task_id": null,
+          "wording": "Items explain notes follow record",
+          "rationale": "Recurring work with no matching task in this REQ.",
+          "score": 0.8533,
+          "parts": {
+            "coverage": 1.0,
+            "evidence": 0.667,
+            "distinctness": 1.0,
+            "parsimony": 0.6,
+            "wording": 1.0
+          }
+        },
+        {
+          "cluster_id": "C2",
+          "operator": "add-task",
+          "target_req_task_id": null,
+          "wording": "Feedback record",
+          "rationale": "Recurring work with no matching task in this REQ.",
+          "score": 0.8533,
+          "parts": {
+            "coverage": 1.0,
+            "evidence": 0.667,
+            "distinctness": 1.0,
+            "parsimony": 0.6,
+            "wording": 1.0
+          }
+        },
+        {
+          "cluster_id": "C3",
+          "operator": "no-change",
+          "target_req_task_id": null,
+          "wording": "No REQ change",
+          "rationale": "Treat as coordination or one-off work, not a deliverable.",
+          "score": 0.9333,
+          "parts": {
+            "coverage": 1.0,
+            "evidence": 0.667,
+            "distinctness": 1.0,
+            "parsimony": 1.0,
+            "wording": 1.0
+          }
+        }
+      ]
+    },
+    "decided_by": "SIM-EMP-002",
+    "review_basis": "tto-lead",
+    "decided_at": "2026-10-23T17:00:00Z",
+    "reason": "Evaluation: endorse the top-ranked plan.",
+    "next_step": "PMO approval (SIM-PMO-FC-001)"
+  },
+  "pmo_decision": {
+    "plan_id": "SIM-RQP-63BB00494E",
+    "stage": "pmo",
+    "decision": "approved",
+    "plan_rank": 1,
+    "decided_by": "SIM-EMP-001",
+    "pmo_id": "SIM-PMO-FC-001",
+    "decided_at": "2026-10-23T17:00:00Z",
+    "reason": "Evaluation: PMO approval.",
+    "req_change": {
+      "change_id": "SIM-RQC-4661104C",
+      "role_req_id": "SIM-REQ-1-01-WR-001",
+      "baseline_req_task_ids": [
+        "SIM-REQ-1-01-01",
+        "SIM-REQ-1-01-02",
+        "SIM-REQ-1-01-03",
+        "SIM-REQ-1-01-04",
+        "SIM-REQ-1-01-05",
+        "SIM-REQ-1-01-06",
+        "SIM-REQ-1-01-07"
+      ],
+      "changes": [
+        {
+          "cluster_id": "C1",
+          "operator": "add-task",
+          "target_req_task_id": null,
+          "wording": "Items explain notes follow record"
+        },
+        {
+          "cluster_id": "C2",
+          "operator": "add-task",
+          "target_req_task_id": null,
+          "wording": "Feedback record"
+        }
+      ],
+      "resulting_task_count": 9,
+      "status": "approved; to be incorporated as the next REQ version"
+    },
+    "baseline_changed": false,
+    "next_step": "incorporate into the controlled Requirement Tasks as the next REQ version"
+  }
+}

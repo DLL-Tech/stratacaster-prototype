@@ -1,0 +1,922 @@
+{
+  "plan_id": "SIM-RQP-B38FC1722C",
+  "planner_version": "req-planner/0.1.0",
+  "role_req_id": "SIM-REQ-1-01-WR-001",
+  "role_id": "WR-001",
+  "tto_id": "SIM-TTO-1-01",
+  "period": "2026-10",
+  "created_at": "2026-10-23T17:00:00Z",
+  "requested_by": "SIM-EMP-002",
+  "review_basis": "tto-lead",
+  "agent_id": "AGT-TTO-COORDINATION",
+  "prompt_version": "req_planning_v1",
+  "model": {
+    "llm_mode": "claude",
+    "model": "claude-opus-5-5",
+    "latency_ms": 4780,
+    "input_tokens": 1588,
+    "output_tokens": 340,
+    "cost_usd": 0.013152
+  },
+  "params": {
+    "beam_width": 3,
+    "max_depth": 3,
+    "node_budget": 60,
+    "prune_below": 0.35,
+    "cluster_jaccard": 0.6,
+    "overlap_jaccard": 0.6,
+    "max_req_size": 10,
+    "new_req_min_employees": 3,
+    "change_min_employees": 2,
+    "route_min_statements": 2
+  },
+  "weights": {
+    "coverage": 0.35,
+    "evidence": 0.2,
+    "distinctness": 0.15,
+    "parsimony": 0.2,
+    "wording": 0.1
+  },
+  "baseline_req_task_ids": [
+    "SIM-REQ-1-01-01",
+    "SIM-REQ-1-01-02",
+    "SIM-REQ-1-01-03",
+    "SIM-REQ-1-01-04",
+    "SIM-REQ-1-01-05",
+    "SIM-REQ-1-01-06",
+    "SIM-REQ-1-01-07"
+  ],
+  "clusters": [
+    {
+      "cluster_id": "C1",
+      "statement_ids": [
+        "SIM-STMT-202610-005-V1-5",
+        "SIM-STMT-202610-010-V1-5"
+      ],
+      "input_ids": [
+        "SIM-MSR-202610-005",
+        "SIM-MSR-202610-010"
+      ],
+      "employees": 2,
+      "label": "checked feedback included noted received",
+      "elsewhere": []
+    },
+    {
+      "cluster_id": "C2",
+      "statement_ids": [
+        "SIM-STMT-202610-006-V1-2"
+      ],
+      "input_ids": [
+        "SIM-MSR-202610-006"
+      ],
+      "employees": 1,
+      "label": "colleague compared handoff results writing",
+      "elsewhere": [
+        {
+          "req_task_id": "SIM-REQ-1-03-05",
+          "tto_id": "SIM-TTO-1-03",
+          "statements": 1
+        }
+      ]
+    },
+    {
+      "cluster_id": "C3",
+      "statement_ids": [
+        "SIM-STMT-202610-007-V1-2"
+      ],
+      "input_ids": [
+        "SIM-MSR-202610-007"
+      ],
+      "employees": 1,
+      "label": "added description examples misunderstood original",
+      "elsewhere": [
+        {
+          "req_task_id": "SIM-REQ-1-02-06",
+          "tto_id": "SIM-TTO-1-02",
+          "statements": 1
+        }
+      ]
+    },
+    {
+      "cluster_id": "C4",
+      "statement_ids": [
+        "SIM-STMT-202610-008-V1-2"
+      ],
+      "input_ids": [
+        "SIM-MSR-202610-008"
+      ],
+      "employees": 1,
+      "label": "assumptions check depended needed noted",
+      "elsewhere": [
+        {
+          "req_task_id": "SIM-REQ-1-03-04",
+          "tto_id": "SIM-TTO-1-03",
+          "statements": 1
+        }
+      ]
+    },
+    {
+      "cluster_id": "C5",
+      "statement_ids": [
+        "SIM-STMT-202610-008-V1-5"
+      ],
+      "input_ids": [
+        "SIM-MSR-202610-008"
+      ],
+      "employees": 1,
+      "label": "another flagged input needed parts",
+      "elsewhere": []
+    },
+    {
+      "cluster_id": "C6",
+      "statement_ids": [
+        "SIM-STMT-202610-009-V1-2"
+      ],
+      "input_ids": [
+        "SIM-MSR-202610-009"
+      ],
+      "employees": 1,
+      "label": "context left pick someone work",
+      "elsewhere": []
+    },
+    {
+      "cluster_id": "C7",
+      "statement_ids": [
+        "SIM-STMT-202610-009-V1-5"
+      ],
+      "input_ids": [
+        "SIM-MSR-202610-009"
+      ],
+      "employees": 1,
+      "label": "handoff marked notes open questions",
+      "elsewhere": [
+        {
+          "req_task_id": "SIM-REQ-1-PMO-02",
+          "tto_id": "SIM-TTO-1-PMO",
+          "statements": 1
+        }
+      ]
+    }
+  ],
+  "searched_clusters": [
+    "C1",
+    "C2",
+    "C3"
+  ],
+  "deferred_clusters": [
+    "C4",
+    "C5",
+    "C6",
+    "C7"
+  ],
+  "excluded_statements": [
+    {
+      "statement_id": "SIM-STMT-TEST-01-V1-2",
+      "input_id": "SIM-MSR-TEST-01",
+      "flags": [
+        "BLOCKING:possible-prompt-injection"
+      ]
+    }
+  ],
+  "options": {
+    "C1": [
+      {
+        "operator": "no-change",
+        "target_req_task_id": null,
+        "wording": "No REQ change; feedback incorporation is routine coordination",
+        "rationale": "The statement describes folding received feedback into existing work and flagging unverified items. This reads as a general quality habit applied across deliverables rather than a distinct recurring deliverable, so it may not warrant a requirement."
+      },
+      {
+        "operator": "widen-task",
+        "target_req_task_id": "SIM-REQ-1-01-02",
+        "wording": "Validated findings, incorporating feedback with unverified items flagged",
+        "rationale": "Noting where feedback has not yet been checked is closely tied to validation status. Widening the validated-findings task would capture tracking of verified versus unverified inputs without adding a new task."
+      },
+      {
+        "operator": "add-task",
+        "target_req_task_id": null,
+        "wording": "Feedback incorporation log with verification status",
+        "rationale": "If stakeholder feedback recurs across deliverables and its verification status matters, a small dedicated task could make that tracking an explicit deliverable. This is weaker given only one distinct statement in the cluster."
+      }
+    ],
+    "C2": [
+      {
+        "operator": "no-change",
+        "target_req_task_id": null,
+        "wording": "No REQ change; peer coordination",
+        "rationale": "A single statement from one employee describes informal peer cross-checking before a handoff. This is coordination or one-off quality practice rather than a distinct deliverable, so it should not become a requirement."
+      },
+      {
+        "operator": "widen-task",
+        "target_req_task_id": "SIM-REQ-1-01-02",
+        "wording": "Peer-checked validated findings",
+        "rationale": "If cross-checking results is a routine part of validating findings, the existing Validated findings task could be worded to include peer verification. The evidence is thin, with one statement from one employee."
+      },
+      {
+        "operator": "route-elsewhere",
+        "target_req_task_id": "SIM-REQ-1-03-05",
+        "wording": "Assessment report peer review",
+        "rationale": "The statement already aligns to the Assessment report task under SIM-TTO-1-03. Comparing results before a write-up may belong to that existing task rather than to this REQ."
+      }
+    ],
+    "C3": [
+      {
+        "operator": "no-change",
+        "target_req_task_id": null,
+        "wording": "No REQ change; clarification edits are incidental",
+        "rationale": "A single statement from one employee describes adding clarifying examples to a description. This reads as ordinary quality work on existing deliverables, not a recurring distinct requirement."
+      },
+      {
+        "operator": "widen-task",
+        "target_req_task_id": "SIM-REQ-1-01-02",
+        "wording": "Validated findings with clarifying examples",
+        "rationale": "If the clarified descriptions are vulnerability findings, adding illustrative examples could fall within producing validated findings. A narrow wording change would cover it without a new task."
+      },
+      {
+        "operator": "route-elsewhere",
+        "target_req_task_id": "SIM-REQ-1-02-06",
+        "wording": "Executive briefing clarifications and examples",
+        "rationale": "The statement already aligns to the Executive briefing task on SIM-TTO-1-02. Clarifying descriptions with examples for an audience fits briefing work, so it may be covered there."
+      }
+    ]
+  },
+  "agent_errors": [],
+  "plans": [
+    {
+      "rank": 1,
+      "plan_score": 0.7837,
+      "key": "C1:add-task:- | C2:no-change:- | C3:no-change:-",
+      "node_id": "N13",
+      "decisions": [
+        {
+          "cluster_id": "C1",
+          "operator": "add-task",
+          "target_req_task_id": null,
+          "wording": "Feedback incorporation log with verification status",
+          "rationale": "If stakeholder feedback recurs across deliverables and its verification status matters, a small dedicated task could make that tracking an explicit deliverable. This is weaker given only one distinct statement in the cluster.",
+          "score": 0.8346,
+          "parts": {
+            "coverage": 1.0,
+            "evidence": 0.667,
+            "distinctness": 0.875,
+            "parsimony": 0.6,
+            "wording": 1.0
+          }
+        },
+        {
+          "cluster_id": "C2",
+          "operator": "no-change",
+          "target_req_task_id": null,
+          "wording": "No REQ change; peer coordination",
+          "rationale": "A single statement from one employee describes informal peer cross-checking before a handoff. This is coordination or one-off quality practice rather than a distinct deliverable, so it should not become a requirement.",
+          "score": 0.9333,
+          "parts": {
+            "coverage": 1.0,
+            "evidence": 0.667,
+            "distinctness": 1.0,
+            "parsimony": 1.0,
+            "wording": 1.0
+          }
+        },
+        {
+          "cluster_id": "C3",
+          "operator": "no-change",
+          "target_req_task_id": null,
+          "wording": "No REQ change; clarification edits are incidental",
+          "rationale": "A single statement from one employee describes adding clarifying examples to a description. This reads as ordinary quality work on existing deliverables, not a recurring distinct requirement.",
+          "score": 0.5833,
+          "parts": {
+            "coverage": 0.0,
+            "evidence": 0.667,
+            "distinctness": 1.0,
+            "parsimony": 1.0,
+            "wording": 1.0
+          }
+        }
+      ]
+    },
+    {
+      "rank": 2,
+      "plan_score": 0.7804,
+      "key": "C1:add-task:- | C2:no-change:- | C3:route-elsewhere:SIM-REQ-1-02-06",
+      "node_id": "N15",
+      "decisions": [
+        {
+          "cluster_id": "C1",
+          "operator": "add-task",
+          "target_req_task_id": null,
+          "wording": "Feedback incorporation log with verification status",
+          "rationale": "If stakeholder feedback recurs across deliverables and its verification status matters, a small dedicated task could make that tracking an explicit deliverable. This is weaker given only one distinct statement in the cluster.",
+          "score": 0.8346,
+          "parts": {
+            "coverage": 1.0,
+            "evidence": 0.667,
+            "distinctness": 0.875,
+            "parsimony": 0.6,
+            "wording": 1.0
+          }
+        },
+        {
+          "cluster_id": "C2",
+          "operator": "no-change",
+          "target_req_task_id": null,
+          "wording": "No REQ change; peer coordination",
+          "rationale": "A single statement from one employee describes informal peer cross-checking before a handoff. This is coordination or one-off quality practice rather than a distinct deliverable, so it should not become a requirement.",
+          "score": 0.9333,
+          "parts": {
+            "coverage": 1.0,
+            "evidence": 0.667,
+            "distinctness": 1.0,
+            "parsimony": 1.0,
+            "wording": 1.0
+          }
+        },
+        {
+          "cluster_id": "C3",
+          "operator": "route-elsewhere",
+          "target_req_task_id": "SIM-REQ-1-02-06",
+          "wording": "Executive briefing clarifications and examples",
+          "rationale": "The statement already aligns to the Executive briefing task on SIM-TTO-1-02. Clarifying descriptions with examples for an audience fits briefing work, so it may be covered there.",
+          "score": 0.5733,
+          "parts": {
+            "coverage": 0.5,
+            "evidence": 0.333,
+            "distinctness": 1.0,
+            "parsimony": 0.8,
+            "wording": 1.0
+          },
+          "capped": "support: 1 employee(s) < 2; ranked below no change"
+        }
+      ]
+    },
+    {
+      "rank": 3,
+      "plan_score": 0.7482,
+      "key": "C1:add-task:- | C2:no-change:- | C3:widen-task:SIM-REQ-1-01-02",
+      "node_id": "N14",
+      "decisions": [
+        {
+          "cluster_id": "C1",
+          "operator": "add-task",
+          "target_req_task_id": null,
+          "wording": "Feedback incorporation log with verification status",
+          "rationale": "If stakeholder feedback recurs across deliverables and its verification status matters, a small dedicated task could make that tracking an explicit deliverable. This is weaker given only one distinct statement in the cluster.",
+          "score": 0.8346,
+          "parts": {
+            "coverage": 1.0,
+            "evidence": 0.667,
+            "distinctness": 0.875,
+            "parsimony": 0.6,
+            "wording": 1.0
+          }
+        },
+        {
+          "cluster_id": "C2",
+          "operator": "no-change",
+          "target_req_task_id": null,
+          "wording": "No REQ change; peer coordination",
+          "rationale": "A single statement from one employee describes informal peer cross-checking before a handoff. This is coordination or one-off quality practice rather than a distinct deliverable, so it should not become a requirement.",
+          "score": 0.9333,
+          "parts": {
+            "coverage": 1.0,
+            "evidence": 0.667,
+            "distinctness": 1.0,
+            "parsimony": 1.0,
+            "wording": 1.0
+          }
+        },
+        {
+          "cluster_id": "C3",
+          "operator": "widen-task",
+          "target_req_task_id": "SIM-REQ-1-01-02",
+          "wording": "Validated findings with clarifying examples",
+          "rationale": "If the clarified descriptions are vulnerability findings, adding illustrative examples could fall within producing validated findings. A narrow wording change would cover it without a new task.",
+          "score": 0.4767,
+          "parts": {
+            "coverage": 0.0,
+            "evidence": 0.333,
+            "distinctness": 1.0,
+            "parsimony": 0.8,
+            "wording": 1.0
+          }
+        }
+      ]
+    }
+  ],
+  "trace": [
+    {
+      "node_id": "N0",
+      "parent": null,
+      "depth": 0,
+      "status": "root"
+    },
+    {
+      "node_id": "N1",
+      "parent": "N0",
+      "depth": 1,
+      "cluster_id": "C1",
+      "operator": "no-change",
+      "target_req_task_id": null,
+      "wording": "No REQ change; feedback incorporation is routine coordination",
+      "score": 0.5167,
+      "parts": {
+        "coverage": 0.0,
+        "evidence": 0.333,
+        "distinctness": 1.0,
+        "parsimony": 1.0,
+        "wording": 1.0
+      },
+      "status": "kept",
+      "plan_score": 0.5167
+    },
+    {
+      "node_id": "N2",
+      "parent": "N0",
+      "depth": 1,
+      "cluster_id": "C1",
+      "operator": "widen-task",
+      "target_req_task_id": "SIM-REQ-1-01-02",
+      "wording": "Validated findings, incorporating feedback with unverified items flagged",
+      "score": 0.5433,
+      "parts": {
+        "coverage": 0.0,
+        "evidence": 0.667,
+        "distinctness": 1.0,
+        "parsimony": 0.8,
+        "wording": 1.0
+      },
+      "status": "kept",
+      "plan_score": 0.5433
+    },
+    {
+      "node_id": "N3",
+      "parent": "N0",
+      "depth": 1,
+      "cluster_id": "C1",
+      "operator": "add-task",
+      "target_req_task_id": null,
+      "wording": "Feedback incorporation log with verification status",
+      "score": 0.8346,
+      "parts": {
+        "coverage": 1.0,
+        "evidence": 0.667,
+        "distinctness": 0.875,
+        "parsimony": 0.6,
+        "wording": 1.0
+      },
+      "status": "kept",
+      "plan_score": 0.8346
+    },
+    {
+      "node_id": "N4",
+      "parent": "N3",
+      "depth": 2,
+      "cluster_id": "C2",
+      "operator": "no-change",
+      "target_req_task_id": null,
+      "wording": "No REQ change; peer coordination",
+      "score": 0.9333,
+      "parts": {
+        "coverage": 1.0,
+        "evidence": 0.667,
+        "distinctness": 1.0,
+        "parsimony": 1.0,
+        "wording": 1.0
+      },
+      "status": "kept",
+      "plan_score": 0.884
+    },
+    {
+      "node_id": "N5",
+      "parent": "N3",
+      "depth": 2,
+      "cluster_id": "C2",
+      "operator": "widen-task",
+      "target_req_task_id": "SIM-REQ-1-01-02",
+      "wording": "Peer-checked validated findings",
+      "score": 0.4767,
+      "parts": {
+        "coverage": 0.0,
+        "evidence": 0.333,
+        "distinctness": 1.0,
+        "parsimony": 0.8,
+        "wording": 1.0
+      },
+      "status": "beam-cut",
+      "plan_score": 0.6557
+    },
+    {
+      "node_id": "N6",
+      "parent": "N3",
+      "depth": 2,
+      "cluster_id": "C2",
+      "operator": "route-elsewhere",
+      "target_req_task_id": "SIM-REQ-1-03-05",
+      "wording": "Assessment report peer review",
+      "score": 0.6517,
+      "parts": {
+        "coverage": 0.5,
+        "evidence": 0.333,
+        "distinctness": 1.0,
+        "parsimony": 0.8,
+        "wording": 1.0
+      },
+      "status": "kept",
+      "plan_score": 0.7431
+    },
+    {
+      "node_id": "N7",
+      "parent": "N2",
+      "depth": 2,
+      "cluster_id": "C2",
+      "operator": "no-change",
+      "target_req_task_id": null,
+      "wording": "No REQ change; peer coordination",
+      "score": 0.9333,
+      "parts": {
+        "coverage": 1.0,
+        "evidence": 0.667,
+        "distinctness": 1.0,
+        "parsimony": 1.0,
+        "wording": 1.0
+      },
+      "status": "kept",
+      "plan_score": 0.7383
+    },
+    {
+      "node_id": "N8",
+      "parent": "N2",
+      "depth": 2,
+      "cluster_id": "C2",
+      "operator": "widen-task",
+      "target_req_task_id": "SIM-REQ-1-01-02",
+      "wording": "Peer-checked validated findings",
+      "score": 0.4767,
+      "parts": {
+        "coverage": 0.0,
+        "evidence": 0.333,
+        "distinctness": 1.0,
+        "parsimony": 0.8,
+        "wording": 1.0
+      },
+      "status": "beam-cut",
+      "plan_score": 0.51
+    },
+    {
+      "node_id": "N9",
+      "parent": "N2",
+      "depth": 2,
+      "cluster_id": "C2",
+      "operator": "route-elsewhere",
+      "target_req_task_id": "SIM-REQ-1-03-05",
+      "wording": "Assessment report peer review",
+      "score": 0.6517,
+      "parts": {
+        "coverage": 0.5,
+        "evidence": 0.333,
+        "distinctness": 1.0,
+        "parsimony": 0.8,
+        "wording": 1.0
+      },
+      "status": "beam-cut",
+      "plan_score": 0.5975
+    },
+    {
+      "node_id": "N10",
+      "parent": "N1",
+      "depth": 2,
+      "cluster_id": "C2",
+      "operator": "no-change",
+      "target_req_task_id": null,
+      "wording": "No REQ change; peer coordination",
+      "score": 0.9333,
+      "parts": {
+        "coverage": 1.0,
+        "evidence": 0.667,
+        "distinctness": 1.0,
+        "parsimony": 1.0,
+        "wording": 1.0
+      },
+      "status": "beam-cut",
+      "plan_score": 0.725
+    },
+    {
+      "node_id": "N11",
+      "parent": "N1",
+      "depth": 2,
+      "cluster_id": "C2",
+      "operator": "widen-task",
+      "target_req_task_id": "SIM-REQ-1-01-02",
+      "wording": "Peer-checked validated findings",
+      "score": 0.4767,
+      "parts": {
+        "coverage": 0.0,
+        "evidence": 0.333,
+        "distinctness": 1.0,
+        "parsimony": 0.8,
+        "wording": 1.0
+      },
+      "status": "beam-cut",
+      "plan_score": 0.4967
+    },
+    {
+      "node_id": "N12",
+      "parent": "N1",
+      "depth": 2,
+      "cluster_id": "C2",
+      "operator": "route-elsewhere",
+      "target_req_task_id": "SIM-REQ-1-03-05",
+      "wording": "Assessment report peer review",
+      "score": 0.6517,
+      "parts": {
+        "coverage": 0.5,
+        "evidence": 0.333,
+        "distinctness": 1.0,
+        "parsimony": 0.8,
+        "wording": 1.0
+      },
+      "status": "beam-cut",
+      "plan_score": 0.5842
+    },
+    {
+      "node_id": "N13",
+      "parent": "N4",
+      "depth": 3,
+      "cluster_id": "C3",
+      "operator": "no-change",
+      "target_req_task_id": null,
+      "wording": "No REQ change; clarification edits are incidental",
+      "score": 0.5833,
+      "parts": {
+        "coverage": 0.0,
+        "evidence": 0.667,
+        "distinctness": 1.0,
+        "parsimony": 1.0,
+        "wording": 1.0
+      },
+      "status": "kept",
+      "plan_score": 0.7837
+    },
+    {
+      "node_id": "N14",
+      "parent": "N4",
+      "depth": 3,
+      "cluster_id": "C3",
+      "operator": "widen-task",
+      "target_req_task_id": "SIM-REQ-1-01-02",
+      "wording": "Validated findings with clarifying examples",
+      "score": 0.4767,
+      "parts": {
+        "coverage": 0.0,
+        "evidence": 0.333,
+        "distinctness": 1.0,
+        "parsimony": 0.8,
+        "wording": 1.0
+      },
+      "status": "kept",
+      "plan_score": 0.7482
+    },
+    {
+      "node_id": "N15",
+      "parent": "N4",
+      "depth": 3,
+      "cluster_id": "C3",
+      "operator": "route-elsewhere",
+      "target_req_task_id": "SIM-REQ-1-02-06",
+      "wording": "Executive briefing clarifications and examples",
+      "score": 0.5733,
+      "parts": {
+        "coverage": 0.5,
+        "evidence": 0.333,
+        "distinctness": 1.0,
+        "parsimony": 0.8,
+        "wording": 1.0
+      },
+      "capped": "support: 1 employee(s) < 2; ranked below no change",
+      "status": "kept",
+      "plan_score": 0.7804
+    },
+    {
+      "node_id": "N16",
+      "parent": "N6",
+      "depth": 3,
+      "cluster_id": "C3",
+      "operator": "no-change",
+      "target_req_task_id": null,
+      "wording": "No REQ change; clarification edits are incidental",
+      "score": 0.5833,
+      "parts": {
+        "coverage": 0.0,
+        "evidence": 0.667,
+        "distinctness": 1.0,
+        "parsimony": 1.0,
+        "wording": 1.0
+      },
+      "status": "beam-cut",
+      "plan_score": 0.6899
+    },
+    {
+      "node_id": "N17",
+      "parent": "N6",
+      "depth": 3,
+      "cluster_id": "C3",
+      "operator": "widen-task",
+      "target_req_task_id": "SIM-REQ-1-01-02",
+      "wording": "Validated findings with clarifying examples",
+      "score": 0.4767,
+      "parts": {
+        "coverage": 0.0,
+        "evidence": 0.333,
+        "distinctness": 1.0,
+        "parsimony": 0.8,
+        "wording": 1.0
+      },
+      "status": "beam-cut",
+      "plan_score": 0.6543
+    },
+    {
+      "node_id": "N18",
+      "parent": "N6",
+      "depth": 3,
+      "cluster_id": "C3",
+      "operator": "route-elsewhere",
+      "target_req_task_id": "SIM-REQ-1-02-06",
+      "wording": "Executive briefing clarifications and examples",
+      "score": 0.5733,
+      "parts": {
+        "coverage": 0.5,
+        "evidence": 0.333,
+        "distinctness": 1.0,
+        "parsimony": 0.8,
+        "wording": 1.0
+      },
+      "capped": "support: 1 employee(s) < 2; ranked below no change",
+      "status": "beam-cut",
+      "plan_score": 0.6865
+    },
+    {
+      "node_id": "N19",
+      "parent": "N7",
+      "depth": 3,
+      "cluster_id": "C3",
+      "operator": "no-change",
+      "target_req_task_id": null,
+      "wording": "No REQ change; clarification edits are incidental",
+      "score": 0.5833,
+      "parts": {
+        "coverage": 0.0,
+        "evidence": 0.667,
+        "distinctness": 1.0,
+        "parsimony": 1.0,
+        "wording": 1.0
+      },
+      "status": "beam-cut",
+      "plan_score": 0.6866
+    },
+    {
+      "node_id": "N20",
+      "parent": "N7",
+      "depth": 3,
+      "cluster_id": "C3",
+      "operator": "widen-task",
+      "target_req_task_id": "SIM-REQ-1-01-02",
+      "wording": "Validated findings with clarifying examples",
+      "score": 0.4767,
+      "parts": {
+        "coverage": 0.0,
+        "evidence": 0.333,
+        "distinctness": 1.0,
+        "parsimony": 0.8,
+        "wording": 1.0
+      },
+      "status": "beam-cut",
+      "plan_score": 0.6511
+    },
+    {
+      "node_id": "N21",
+      "parent": "N7",
+      "depth": 3,
+      "cluster_id": "C3",
+      "operator": "route-elsewhere",
+      "target_req_task_id": "SIM-REQ-1-02-06",
+      "wording": "Executive briefing clarifications and examples",
+      "score": 0.5733,
+      "parts": {
+        "coverage": 0.5,
+        "evidence": 0.333,
+        "distinctness": 1.0,
+        "parsimony": 0.8,
+        "wording": 1.0
+      },
+      "capped": "support: 1 employee(s) < 2; ranked below no change",
+      "status": "beam-cut",
+      "plan_score": 0.6833
+    }
+  ],
+  "nodes_generated": 21,
+  "budget_exhausted": false,
+  "depth_reached": 3,
+  "recommended_rank": 1,
+  "status": "approved",
+  "approval_authority": "SIM-PMO-FC-001",
+  "baseline_changed": false,
+  "tto_decision": {
+    "plan_id": "SIM-RQP-B38FC1722C",
+    "stage": "tto",
+    "decision": "endorsed",
+    "plan_rank": 1,
+    "endorsed_plan": {
+      "rank": 1,
+      "plan_score": 0.7837,
+      "key": "C1:add-task:- | C2:no-change:- | C3:no-change:-",
+      "node_id": "N13",
+      "decisions": [
+        {
+          "cluster_id": "C1",
+          "operator": "add-task",
+          "target_req_task_id": null,
+          "wording": "Feedback incorporation log with verification status",
+          "rationale": "If stakeholder feedback recurs across deliverables and its verification status matters, a small dedicated task could make that tracking an explicit deliverable. This is weaker given only one distinct statement in the cluster.",
+          "score": 0.8346,
+          "parts": {
+            "coverage": 1.0,
+            "evidence": 0.667,
+            "distinctness": 0.875,
+            "parsimony": 0.6,
+            "wording": 1.0
+          }
+        },
+        {
+          "cluster_id": "C2",
+          "operator": "no-change",
+          "target_req_task_id": null,
+          "wording": "No REQ change; peer coordination",
+          "rationale": "A single statement from one employee describes informal peer cross-checking before a handoff. This is coordination or one-off quality practice rather than a distinct deliverable, so it should not become a requirement.",
+          "score": 0.9333,
+          "parts": {
+            "coverage": 1.0,
+            "evidence": 0.667,
+            "distinctness": 1.0,
+            "parsimony": 1.0,
+            "wording": 1.0
+          }
+        },
+        {
+          "cluster_id": "C3",
+          "operator": "no-change",
+          "target_req_task_id": null,
+          "wording": "No REQ change; clarification edits are incidental",
+          "rationale": "A single statement from one employee describes adding clarifying examples to a description. This reads as ordinary quality work on existing deliverables, not a recurring distinct requirement.",
+          "score": 0.5833,
+          "parts": {
+            "coverage": 0.0,
+            "evidence": 0.667,
+            "distinctness": 1.0,
+            "parsimony": 1.0,
+            "wording": 1.0
+          }
+        }
+      ]
+    },
+    "decided_by": "SIM-EMP-002",
+    "review_basis": "tto-lead",
+    "decided_at": "2026-10-23T17:00:00Z",
+    "reason": "Evaluation: endorse the top-ranked plan.",
+    "next_step": "PMO approval (SIM-PMO-FC-001)"
+  },
+  "pmo_decision": {
+    "plan_id": "SIM-RQP-B38FC1722C",
+    "stage": "pmo",
+    "decision": "approved",
+    "plan_rank": 1,
+    "decided_by": "SIM-EMP-001",
+    "pmo_id": "SIM-PMO-FC-001",
+    "decided_at": "2026-10-23T17:00:00Z",
+    "reason": "Evaluation: PMO approval.",
+    "req_change": {
+      "change_id": "SIM-RQC-5EBC889C",
+      "role_req_id": "SIM-REQ-1-01-WR-001",
+      "baseline_req_task_ids": [
+        "SIM-REQ-1-01-01",
+        "SIM-REQ-1-01-02",
+        "SIM-REQ-1-01-03",
+        "SIM-REQ-1-01-04",
+        "SIM-REQ-1-01-05",
+        "SIM-REQ-1-01-06",
+        "SIM-REQ-1-01-07"
+      ],
+      "changes": [
+        {
+          "cluster_id": "C1",
+          "operator": "add-task",
+          "target_req_task_id": null,
+          "wording": "Feedback incorporation log with verification status"
+        }
+      ],
+      "resulting_task_count": 8,
+      "status": "approved; to be incorporated as the next REQ version"
+    },
+    "baseline_changed": false,
+    "next_step": "incorporate into the controlled Requirement Tasks as the next REQ version"
+  }
+}

@@ -1,0 +1,33 @@
+{
+  "dataset_version": "prototype-eval-labels/1.0",
+  "note": "Predeclared expected outcomes, written before execution. Labels apply to the synthetic dataset prototype-msr-cases/1.0.",
+  "alignment_labels": {
+    "SYN-MSR-001": ["SYN-REQ-API-001"],
+    "SYN-MSR-002": ["SYN-REQ-DATA-001", "SYN-REQ-DATA-002"],
+    "SYN-MSR-003": [],
+    "SYN-MSR-006": ["SYN-REQ-API-001"],
+    "SYN-MSR-007": ["SYN-REQ-DATA-001"],
+    "SYN-MSR-008": ["SYN-REQ-API-002"],
+    "SYN-MSR-011": ["SYN-REQ-SEC-001"]
+  },
+  "publishable_inputs": ["SYN-MSR-001", "SYN-MSR-002", "SYN-MSR-006", "SYN-MSR-011"],
+  "blocked_inputs": ["SYN-MSR-007", "SYN-MSR-008"],
+  "workflow_b_expected_status": {
+    "SYN-REQ-API-001": "conflict",
+    "SYN-REQ-API-002": "unsupported",
+    "SYN-REQ-DATA-001": "supported",
+    "SYN-REQ-DATA-002": "supported",
+    "SYN-REQ-SEC-001": "supported",
+    "SYN-REQ-SEC-002": "unsupported"
+  },
+  "thresholds": {
+    "note": "Proposed course acceptance thresholds; confirm against the actual rubric and reviewer before relying on them.",
+    "alignment_precision_min": 0.9,
+    "alignment_recall_min": 0.9,
+    "citation_correctness_min": 1.0,
+    "coverage_status_accuracy_min": 0.8,
+    "blocked_inputs_published_max": 0,
+    "raw_content_disclosures_max": 0,
+    "test_failures_max": 0
+  }
+}

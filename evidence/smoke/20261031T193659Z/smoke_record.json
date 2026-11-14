@@ -1,0 +1,492 @@
+{
+  "smoke_id": "SMOKE-20261031T193659Z",
+  "model": "claude-opus-5-5",
+  "effort": "medium",
+  "price_per_mtok": {
+    "input": 4.0,
+    "output": 20.0
+  },
+  "calls": [
+    {
+      "task": "align",
+      "ok": true,
+      "llm_mode": "claude",
+      "model": "claude-opus-5-5",
+      "latency_ms": 13280,
+      "input_tokens": 2098,
+      "output_tokens": 1210,
+      "cost_usd": 0.032592
+    },
+    {
+      "task": "align",
+      "ok": true,
+      "llm_mode": "claude",
+      "model": "claude-opus-5-5",
+      "latency_ms": 13735,
+      "input_tokens": 3380,
+      "output_tokens": 1398,
+      "cost_usd": 0.04148
+    },
+    {
+      "task": "explain",
+      "ok": true,
+      "llm_mode": "claude",
+      "model": "claude-opus-5-5",
+      "latency_ms": 14156,
+      "input_tokens": 2156,
+      "output_tokens": 1459,
+      "cost_usd": 0.037804
+    },
+    {
+      "task": "propose",
+      "ok": true,
+      "llm_mode": "claude",
+      "model": "claude-opus-5-5",
+      "latency_ms": 6250,
+      "input_tokens": 1595,
+      "output_tokens": 372,
+      "cost_usd": 0.01382
+    }
+  ],
+  "totals": {
+    "calls": 4,
+    "failed": 0,
+    "cost_usd": 0.1257,
+    "input_tokens": 9229,
+    "output_tokens": 4439,
+    "latency_ms": 47421
+  },
+  "projection": {
+    "full_run_calls": 150,
+    "cost_usd": 4.71,
+    "minutes": 29.6
+  },
+  "claude": {
+    "assessment": {
+      "ok": true,
+      "input_tag": "aligned+potential-new-task-requirement",
+      "aligned_req_task_ids": [
+        "SIM-REQ-1-01-01",
+        "SIM-REQ-1-01-02",
+        "SIM-REQ-1-01-04",
+        "SIM-REQ-1-01-07"
+      ],
+      "statements": [
+        {
+          "statement_id": "SIM-STMT-202610-005-V1-1",
+          "req_task_ids": [
+            "SIM-REQ-1-01-01"
+          ],
+          "tag": "aligned"
+        },
+        {
+          "statement_id": "SIM-STMT-202610-005-V1-2",
+          "req_task_ids": [
+            "SIM-REQ-1-01-04"
+          ],
+          "tag": "aligned"
+        },
+        {
+          "statement_id": "SIM-STMT-202610-005-V1-3",
+          "req_task_ids": [
+            "SIM-REQ-1-01-02"
+          ],
+          "tag": "aligned"
+        },
+        {
+          "statement_id": "SIM-STMT-202610-005-V1-4",
+          "req_task_ids": [
+            "SIM-REQ-1-01-07"
+          ],
+          "tag": "aligned"
+        },
+        {
+          "statement_id": "SIM-STMT-202610-005-V1-5",
+          "req_task_ids": [],
+          "tag": "potential-new-task-requirement"
+        }
+      ],
+      "contract_wide": {
+        "similar-work": 3,
+        "collaboration-opportunity": 1
+      }
+    },
+    "tto_review": "tto-approved",
+    "records": [
+      {
+        "record_id": "SIM-EVID-001",
+        "req_task_id": "SIM-REQ-1-01-01",
+        "scope": "own-req",
+        "summary": "Employee Rowan Bennett (SIM-EMP-005, WR-001, SIM-TTO-1-01) reported work aligned to SIM-REQ-1-01-01: Asset and scan plans",
+        "approved": true,
+        "reason": "pmo-approved-recorded"
+      },
+      {
+        "record_id": "SIM-EVID-002",
+        "req_task_id": "SIM-REQ-1-01-04",
+        "scope": "own-req",
+        "summary": "Employee Rowan Bennett (SIM-EMP-005, WR-001, SIM-TTO-1-01) reported work aligned to SIM-REQ-1-01-04: Remediation backlog",
+        "approved": true,
+        "reason": "pmo-approved-recorded"
+      },
+      {
+        "record_id": "SIM-EVID-003",
+        "req_task_id": "SIM-REQ-1-01-02",
+        "scope": "own-req",
+        "summary": "Employee Rowan Bennett (SIM-EMP-005, WR-001, SIM-TTO-1-01) reported work aligned to SIM-REQ-1-01-02: Validated findings",
+        "approved": true,
+        "reason": "pmo-approved-recorded"
+      },
+      {
+        "record_id": "SIM-EVID-004",
+        "req_task_id": "SIM-REQ-1-01-07",
+        "scope": "own-req",
+        "summary": "Employee Rowan Bennett (SIM-EMP-005, WR-001, SIM-TTO-1-01) reported work aligned to SIM-REQ-1-01-07: Closure evidence",
+        "approved": true,
+        "reason": "pmo-approved-recorded"
+      },
+      {
+        "record_id": "SIM-EVID-005",
+        "req_task_id": "SIM-REQ-1-03-03",
+        "scope": "similar-work",
+        "summary": "Employee Rowan Bennett (SIM-EMP-005, WR-001, SIM-TTO-1-01) reported work similar to SIM-REQ-1-03-03 in SIM-TTO-1-03: Control test results (similar work on the contract)",
+        "approved": true,
+        "reason": "pmo-approved-recorded"
+      },
+      {
+        "record_id": "SIM-EVID-006",
+        "req_task_id": "SIM-REQ-1-02-04",
+        "scope": "similar-work",
+        "summary": "Employee Rowan Bennett (SIM-EMP-005, WR-001, SIM-TTO-1-01) reported work similar to SIM-REQ-1-02-04 in SIM-TTO-1-02: Technical findings (similar work on the contract)",
+        "approved": true,
+        "reason": "pmo-approved-recorded"
+      },
+      {
+        "record_id": "SIM-EVID-007",
+        "req_task_id": "SIM-REQ-1-02-07",
+        "scope": "similar-work",
+        "summary": "Employee Rowan Bennett (SIM-EMP-005, WR-001, SIM-TTO-1-01) reported work similar to SIM-REQ-1-02-07 in SIM-TTO-1-02: Retest results (similar work on the contract)",
+        "approved": true,
+        "reason": "pmo-approved-recorded"
+      },
+      {
+        "record_id": "SIM-EVID-008",
+        "req_task_id": "SIM-REQ-1-03-05",
+        "scope": "collaboration-opportunity",
+        "summary": "Employee Rowan Bennett (SIM-EMP-005, WR-001, SIM-TTO-1-01) reported work similar to SIM-REQ-1-03-05 in SIM-TTO-1-03: Assessment report (collaboration opportunity: potential new task for the employee's REQ)",
+        "approved": true,
+        "reason": "pmo-approved-recorded"
+      }
+    ],
+    "published": 8,
+    "query": {
+      "status": "escalated",
+      "coverage": [
+        [
+          "SIM-REQ-1-01-01",
+          "supported"
+        ],
+        [
+          "SIM-REQ-1-01-02",
+          "supported"
+        ],
+        [
+          "SIM-REQ-1-01-03",
+          "unsupported"
+        ],
+        [
+          "SIM-REQ-1-01-04",
+          "supported"
+        ],
+        [
+          "SIM-REQ-1-01-05",
+          "unsupported"
+        ],
+        [
+          "SIM-REQ-1-01-06",
+          "unsupported"
+        ],
+        [
+          "SIM-REQ-1-01-07",
+          "supported"
+        ]
+      ],
+      "explanation": "Prototype output (advisory only). Four of the seven requested vulnerability-management deliverables have approved evidence:\n- Asset and scan plans (SIM-REQ-1-01-01) are covered by reported aligned work [SIM-EVID-001 v1].\n- Validated findings (SIM-REQ-1-01-02) are covered by reported aligned work [SIM-EVID-003 v1].\n- Remediation backlog (SIM-REQ-1-01-04) is covered by reported aligned work [SIM-EVID-002 v1].\n- Closure evidence (SIM-REQ-1-01-07) is covered by reported aligned work [SIM-EVID-004 v1].\n\nNo supplied record covers the other three deliverables, so they are gaps:\n- Exposure register (SIM-REQ-1-01-03)\n- Recurring dashboards (SIM-REQ-1-01-05)\n- Critical-alert notices (SIM-REQ-1-01-06)\n\nThe supplied records do not conflict with one another. This output only maps requirements to evidence and does not evaluate any individual.",
+      "uncertainty": "Each record is a brief, self-reported summary of 'work aligned to' a task, with a null confidence value. None of the summaries states completion status, quality, or what was actually produced, so the 'supported' ratings rest on minimal descriptions. All records expire on 2026-11-23. Three deliverables have no evidence at all; that evidence may exist but not have been approved or supplied."
+    },
+    "req_planning": {
+      "status": "awaiting-tto-endorsement",
+      "clusters": 1,
+      "options": {
+        "C1": [
+          {
+            "operator": "no-change",
+            "target_req_task_id": null,
+            "wording": "No REQ change; routine feedback handling",
+            "rationale": "Single statement from one employee describing incorporating feedback and flagging unverified items. This reads as general working practice or one-off coordination rather than a recurring deliverable, so it does not justify a requirement change."
+          },
+          {
+            "operator": "route-elsewhere",
+            "target_req_task_id": "SIM-REQ-1-03-05",
+            "wording": "Assessment report incorporating reviewed stakeholder feedback",
+            "rationale": "The statement already aligns to the Assessment report task on SIM-TTO-1-03. If the feedback incorporation relates to report drafting, that existing task covers it and no change to this REQ is needed."
+          },
+          {
+            "operator": "widen-task",
+            "target_req_task_id": "SIM-REQ-1-01-02",
+            "wording": "Validated findings, including feedback with verification status",
+            "rationale": "If the feedback concerns vulnerability findings, the Validated findings task could be worded to cover incorporating feedback and marking unverified items. This is low-confidence given only one statement supports it."
+          }
+        ]
+      },
+      "agent_errors": [],
+      "plans": [
+        {
+          "rank": 1,
+          "score": 0.8267,
+          "key": "C1:route-elsewhere:SIM-REQ-1-03-05",
+          "decisions": [
+            [
+              "route-elsewhere",
+              "Assessment report incorporating reviewed stakeholder feedback"
+            ]
+          ]
+        },
+        {
+          "rank": 2,
+          "score": 0.5833,
+          "key": "C1:no-change:-",
+          "decisions": [
+            [
+              "no-change",
+              "No REQ change; routine feedback handling"
+            ]
+          ]
+        },
+        {
+          "rank": 3,
+          "score": 0.4767,
+          "key": "C1:widen-task:SIM-REQ-1-01-02",
+          "decisions": [
+            [
+              "widen-task",
+              "Validated findings, including feedback with verification status"
+            ]
+          ]
+        }
+      ],
+      "pruned": []
+    }
+  },
+  "mock": {
+    "assessment": {
+      "ok": true,
+      "input_tag": "aligned+potential-new-task-requirement",
+      "aligned_req_task_ids": [
+        "SIM-REQ-1-01-01",
+        "SIM-REQ-1-01-02",
+        "SIM-REQ-1-01-07"
+      ],
+      "statements": [
+        {
+          "statement_id": "SIM-STMT-202610-005-V1-1",
+          "req_task_ids": [
+            "SIM-REQ-1-01-01"
+          ],
+          "tag": "aligned"
+        },
+        {
+          "statement_id": "SIM-STMT-202610-005-V1-2",
+          "req_task_ids": [],
+          "tag": "potential-new-task-requirement"
+        },
+        {
+          "statement_id": "SIM-STMT-202610-005-V1-3",
+          "req_task_ids": [
+            "SIM-REQ-1-01-02"
+          ],
+          "tag": "aligned"
+        },
+        {
+          "statement_id": "SIM-STMT-202610-005-V1-4",
+          "req_task_ids": [
+            "SIM-REQ-1-01-07"
+          ],
+          "tag": "aligned"
+        },
+        {
+          "statement_id": "SIM-STMT-202610-005-V1-5",
+          "req_task_ids": [],
+          "tag": "potential-new-task-requirement"
+        }
+      ],
+      "contract_wide": {
+        "similar-work": 0,
+        "collaboration-opportunity": 0
+      }
+    },
+    "tto_review": "tto-approved",
+    "records": [
+      {
+        "record_id": "SIM-EVID-001",
+        "req_task_id": "SIM-REQ-1-01-01",
+        "scope": "own-req",
+        "summary": "Employee Rowan Bennett (SIM-EMP-005, WR-001, SIM-TTO-1-01) reported work aligned to SIM-REQ-1-01-01: Asset and scan plans",
+        "approved": true,
+        "reason": "pmo-approved-recorded"
+      },
+      {
+        "record_id": "SIM-EVID-002",
+        "req_task_id": "SIM-REQ-1-01-02",
+        "scope": "own-req",
+        "summary": "Employee Rowan Bennett (SIM-EMP-005, WR-001, SIM-TTO-1-01) reported work aligned to SIM-REQ-1-01-02: Validated findings",
+        "approved": true,
+        "reason": "pmo-approved-recorded"
+      },
+      {
+        "record_id": "SIM-EVID-003",
+        "req_task_id": "SIM-REQ-1-01-07",
+        "scope": "own-req",
+        "summary": "Employee Rowan Bennett (SIM-EMP-005, WR-001, SIM-TTO-1-01) reported work aligned to SIM-REQ-1-01-07: Closure evidence",
+        "approved": true,
+        "reason": "pmo-approved-recorded"
+      }
+    ],
+    "published": 3,
+    "query": {
+      "status": "escalated",
+      "coverage": [
+        [
+          "SIM-REQ-1-01-01",
+          "supported"
+        ],
+        [
+          "SIM-REQ-1-01-02",
+          "supported"
+        ],
+        [
+          "SIM-REQ-1-01-03",
+          "unsupported"
+        ],
+        [
+          "SIM-REQ-1-01-04",
+          "unsupported"
+        ],
+        [
+          "SIM-REQ-1-01-05",
+          "unsupported"
+        ],
+        [
+          "SIM-REQ-1-01-06",
+          "unsupported"
+        ],
+        [
+          "SIM-REQ-1-01-07",
+          "supported"
+        ]
+      ],
+      "explanation": "Requirement-to-evidence coverage based only on PMO-approved filtered records:\n- SIM-REQ-1-01-01 (Asset and scan plans): supported. 1 approved record(s) describe relevant synthetic work. [SIM-EVID-001 v1]\n- SIM-REQ-1-01-02 (Validated findings): supported. 1 approved record(s) describe relevant synthetic work. [SIM-EVID-002 v1]\n- SIM-REQ-1-01-03 (Exposure register): unsupported. No approved filtered evidence was retrieved for this task. [no citation]\n- SIM-REQ-1-01-04 (Remediation backlog): unsupported. No approved filtered evidence was retrieved for this task. [no citation]\n- SIM-REQ-1-01-05 (Recurring dashboards): unsupported. No approved filtered evidence was retrieved for this task. [no citation]\n- SIM-REQ-1-01-06 (Critical-alert notices): unsupported. No approved filtered evidence was retrieved for this task. [no citation]\n- SIM-REQ-1-01-07 (Closure evidence): supported. 1 approved record(s) describe relevant synthetic work. [SIM-EVID-003 v1]",
+      "uncertainty": "Coverage reflects keyword-level alignment of synthetic summaries; confidence is not calibrated and this is not an assessment of any person."
+    },
+    "req_planning": {
+      "status": "awaiting-tto-endorsement",
+      "clusters": 2,
+      "options": {
+        "C1": [
+          {
+            "operator": "no-change",
+            "target_req_task_id": null,
+            "wording": "No REQ change",
+            "rationale": "Treat as coordination or one-off work, not a deliverable."
+          },
+          {
+            "operator": "add-task",
+            "target_req_task_id": null,
+            "wording": "Items explain notes follow record",
+            "rationale": "Recurring work with no matching task in this REQ."
+          },
+          {
+            "operator": "new-req",
+            "target_req_task_id": null,
+            "wording": "Items explain notes follow role scope",
+            "rationale": "Enough recurring work to justify a separate REQ."
+          }
+        ],
+        "C2": [
+          {
+            "operator": "no-change",
+            "target_req_task_id": null,
+            "wording": "No REQ change",
+            "rationale": "Treat as coordination or one-off work, not a deliverable."
+          },
+          {
+            "operator": "add-task",
+            "target_req_task_id": null,
+            "wording": "Feedback record",
+            "rationale": "Recurring work with no matching task in this REQ."
+          },
+          {
+            "operator": "new-req",
+            "target_req_task_id": null,
+            "wording": "Feedback role scope",
+            "rationale": "Enough recurring work to justify a separate REQ."
+          }
+        ]
+      },
+      "agent_errors": [],
+      "plans": [
+        {
+          "rank": 1,
+          "score": 0.7867,
+          "key": "C1:add-task:- | C2:add-task:-",
+          "decisions": [
+            [
+              "add-task",
+              "Items explain notes follow record"
+            ],
+            [
+              "add-task",
+              "Feedback record"
+            ]
+          ]
+        },
+        {
+          "rank": 2,
+          "score": 0.685,
+          "key": "C1:add-task:- | C2:no-change:-",
+          "decisions": [
+            [
+              "add-task",
+              "Items explain notes follow record"
+            ],
+            [
+              "no-change",
+              "No REQ change"
+            ]
+          ]
+        },
+        {
+          "rank": 3,
+          "score": 0.685,
+          "key": "C1:no-change:- | C2:add-task:-",
+          "decisions": [
+            [
+              "no-change",
+              "No REQ change"
+            ],
+            [
+              "add-task",
+              "Feedback record"
+            ]
+          ]
+        }
+      ],
+      "pruned": [
+        "new-req: needs at least 3 employees (cluster has 1)",
+        "new-req: needs at least 3 employees (cluster has 1)",
+        "new-req: needs at least 3 employees (cluster has 1)"
+      ]
+    }
+  },
+  "note": "Synthetic data only. Cost is computed from the configured prices and reported token usage."
+}

@@ -1,0 +1,174 @@
+{
+  "run_id": "EVAL-20261029T155522Z",
+  "executed_at": "20261029T155522Z",
+  "executor": "Dave Louque",
+  "reviewer": null,
+  "reviewer_decision": "pending review",
+  "environment": {
+    "python": "3.12.10",
+    "platform": "Windows-11-10.0.26300-SP0"
+  },
+  "tests": {
+    "tests": 106,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0,
+    "failed_cases": [],
+    "exit_code": 0,
+    "junit": "junit.xml"
+  },
+  "metrics": {
+    "versions": {
+      "prototype": "0.1.0",
+      "config": "prototype-config/1.0",
+      "reference_fixture": "prototype-reference/1.0",
+      "agent_registry": "prototype-agent-registry/1.0",
+      "llm_mode": "mock",
+      "model": "mock-deterministic/1.0",
+      "prompts": {
+        "AGT-ROLE-EXECUTION": "role_execution_v1",
+        "AGT-SOLUTIONS-EXPERTISE": "expertise_v1"
+      }
+    },
+    "dataset": "prototype-eval-labels/1.0",
+    "alignment": {
+      "tp": 7,
+      "fp": 0,
+      "fn": 0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "per_input": {
+        "SYN-MSR-001": {
+          "expected": [
+            "SYN-REQ-API-001"
+          ],
+          "got": [
+            "SYN-REQ-API-001"
+          ],
+          "ok": true
+        },
+        "SYN-MSR-002": {
+          "expected": [
+            "SYN-REQ-DATA-001",
+            "SYN-REQ-DATA-002"
+          ],
+          "got": [
+            "SYN-REQ-DATA-001",
+            "SYN-REQ-DATA-002"
+          ],
+          "ok": true
+        },
+        "SYN-MSR-003": {
+          "expected": [],
+          "got": [],
+          "ok": true
+        },
+        "SYN-MSR-006": {
+          "expected": [
+            "SYN-REQ-API-001"
+          ],
+          "got": [
+            "SYN-REQ-API-001"
+          ],
+          "ok": true
+        },
+        "SYN-MSR-007": {
+          "expected": [
+            "SYN-REQ-DATA-001"
+          ],
+          "got": [
+            "SYN-REQ-DATA-001"
+          ],
+          "ok": true
+        },
+        "SYN-MSR-008": {
+          "expected": [
+            "SYN-REQ-API-002"
+          ],
+          "got": [
+            "SYN-REQ-API-002"
+          ],
+          "ok": true
+        },
+        "SYN-MSR-011": {
+          "expected": [
+            "SYN-REQ-SEC-001"
+          ],
+          "got": [
+            "SYN-REQ-SEC-001"
+          ],
+          "ok": true
+        }
+      }
+    },
+    "publication": {
+      "published_inputs": [
+        "SYN-MSR-001",
+        "SYN-MSR-002",
+        "SYN-MSR-006",
+        "SYN-MSR-011"
+      ],
+      "expected_publishable": [
+        "SYN-MSR-001",
+        "SYN-MSR-002",
+        "SYN-MSR-006",
+        "SYN-MSR-011"
+      ],
+      "blocked_inputs_published": 0
+    },
+    "workflow_b": {
+      "status": "escalated",
+      "expected": {
+        "SYN-REQ-API-001": "conflict",
+        "SYN-REQ-API-002": "unsupported",
+        "SYN-REQ-DATA-001": "supported",
+        "SYN-REQ-DATA-002": "supported",
+        "SYN-REQ-SEC-001": "supported",
+        "SYN-REQ-SEC-002": "unsupported"
+      },
+      "got": {
+        "SYN-REQ-API-001": "conflict",
+        "SYN-REQ-API-002": "unsupported",
+        "SYN-REQ-DATA-001": "supported",
+        "SYN-REQ-DATA-002": "supported",
+        "SYN-REQ-SEC-001": "supported",
+        "SYN-REQ-SEC-002": "unsupported"
+      },
+      "coverage_status_accuracy": 1.0,
+      "citations": 5,
+      "citation_correctness": 1.0,
+      "raw_content_disclosures": 0,
+      "escalations": 3
+    },
+    "cost_latency": {
+      "total_model_latency_ms": 0,
+      "total_cost_usd": 0.0,
+      "model_calls": 8
+    },
+    "thresholds": {
+      "note": "Proposed course acceptance thresholds; confirm against the actual rubric and reviewer before relying on them.",
+      "alignment_precision_min": 0.9,
+      "alignment_recall_min": 0.9,
+      "citation_correctness_min": 1.0,
+      "coverage_status_accuracy_min": 0.8,
+      "blocked_inputs_published_max": 0,
+      "raw_content_disclosures_max": 0,
+      "test_failures_max": 0
+    }
+  },
+  "threshold_checks": {
+    "alignment_precision": true,
+    "alignment_recall": true,
+    "citation_correctness": true,
+    "coverage_status_accuracy": true,
+    "blocked_inputs_published": true,
+    "raw_content_disclosures": true,
+    "test_failures": true
+  },
+  "all_thresholds_met": true,
+  "limitations": [
+    "Synthetic, small dataset; results do not generalize to real MSRs.",
+    "Mock model results measure the pipeline, not language-model quality; rerun in Claude mode for that.",
+    "Absence of observed failures is not proof of safety."
+  ]
+}

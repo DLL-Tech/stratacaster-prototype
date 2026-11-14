@@ -1,0 +1,212 @@
+{
+  "registry_version": "prototype-agent-registry/1.1",
+  "status_note": "Prototype implementation status only; this is not the production registry status in Volume 08. Owners are role placeholders until named in the prototype charter.",
+  "agents": [
+    {
+      "agent_id": "AGT-ROLE-EXECUTION",
+      "name": "Role Execution Agent",
+      "maturity": "Prototype requirement",
+      "prototype_status": "authorized",
+      "version": "1.2.0",
+      "owner": "Prototype developer (named in charter)",
+      "domain": "delivery",
+      "purpose": "Prepare traceable Role/REQ task-alignment candidates from employee-reviewed synthetic MSR inputs within Delivery, and give the employee pre-submission feedback on their draft.",
+      "inputs": [
+        "Atomic statements from an employee-accepted, current, active MSR input version",
+        "Draft statements from the employee's own pre-submission feedback check (held in memory, never stored)",
+        "Bounded REQ task catalog for the input's Role and TTO"
+      ],
+      "outputs": [
+        "AlignmentResult (candidates with a structured reported_status, plus unresolved gaps), stored Delivery-only",
+        "Recommended new tasks for unmatched statements (feedback check only); shown to the employee and, once submitted, to the TTO lead",
+        "Draft filtered-evidence records pending PMO review"
+      ],
+      "permitted_sources": [
+        "delivery_store (via Delivery service only)",
+        "reference_registry"
+      ],
+      "tools": [
+        "normalize_statements",
+        "task_catalog_lookup"
+      ],
+      "permissions": [
+        "read: delivery_store",
+        "write: draft evidence via Delivery service"
+      ],
+      "prohibited": [
+        "approve evidence",
+        "publish across the boundary",
+        "change audience/purpose/restrictions",
+        "staffing, employment, readiness, or certification decisions"
+      ],
+      "human_gates": [
+        "Employee responds to the feedback (edit, confirm, dispute, or flag a new task) before anything is submitted",
+        "Employee review before preparation",
+        "Human PMO approval before publication"
+      ],
+      "stopping_rules": [
+        "Feedback check: no store writes, drafts, or audit entries until the employee submits",
+        "Stop if review is not accepted for the current input version",
+        "Stop if source is not active",
+        "Stop after max_attempts model failures with no partial output"
+      ],
+      "failure_handling": "Bounded retry; on failure record the error, create no drafts, escalate to the Delivery owner.",
+      "prompt_version": "role_execution_v3",
+      "evaluation_evidence": "tests/test_workflow_a.py, tests/test_injection.py, tests/test_failure_recovery.py, tests/test_submission_feedback.py"
+    },
+    {
+      "agent_id": "AGT-SOLUTIONS-ORCHESTRATOR",
+      "name": "Solutions Orchestrator",
+      "maturity": "Prototype requirement",
+      "prototype_status": "authorized",
+      "version": "1.0.0",
+      "owner": "Prototype developer (named in charter)",
+      "domain": "solutions",
+      "purpose": "Validate request context, coordinate authorized retrieval and explanation, enforce stopping conditions, and route exceptions to a human.",
+      "inputs": [
+        "EvidenceQuery from an authenticated Solutions requester"
+      ],
+      "outputs": [
+        "Advisory response with citations and status",
+        "Escalations to named human reviewers"
+      ],
+      "permitted_sources": [
+        "retrieval_gateway only"
+      ],
+      "tools": [
+        "retrieval_gateway.retrieve",
+        "invoke AGT-SOLUTIONS-EXPERTISE",
+        "create_escalation"
+      ],
+      "permissions": [
+        "invoke registered prototype agents",
+        "read approved filtered evidence through the gateway"
+      ],
+      "prohibited": [
+        "direct source-store access",
+        "change conclusions",
+        "grant permissions",
+        "infer approval",
+        "bypass a human gate",
+        "invoke unregistered agents"
+      ],
+      "human_gates": [
+        "Responsible reviewer acknowledgement before a result is complete"
+      ],
+      "stopping_rules": [
+        "Deny on unauthenticated requester, audience non-membership, prohibited purpose, raw-source request, or unknown task",
+        "Fail closed when status metadata is unavailable"
+      ],
+      "failure_handling": "Bounded retry of the Expertise Agent; on failure terminate with status failed_safe and escalate.",
+      "prompt_version": "n/a (deterministic)",
+      "evaluation_evidence": "tests/test_workflow_b.py, tests/test_boundary.py, tests/test_failure_recovery.py"
+    },
+    {
+      "agent_id": "AGT-SOLUTIONS-EXPERTISE",
+      "name": "Solutions Expertise Agent",
+      "maturity": "Prototype requirement",
+      "prototype_status": "authorized",
+      "version": "1.0.0",
+      "owner": "Prototype developer (named in charter)",
+      "domain": "solutions",
+      "purpose": "Check requirement-to-evidence coverage and prepare cited explanations from approved filtered records only.",
+      "inputs": [
+        "Gateway-approved filtered records",
+        "Requested REQ tasks"
+      ],
+      "outputs": [
+        "ExpertiseExplanation (coverage, explanation, uncertainty, needs_human_review)"
+      ],
+      "permitted_sources": [
+        "records passed by the orchestrator"
+      ],
+      "tools": [],
+      "permissions": [
+        "none beyond its inputs"
+      ],
+      "prohibited": [
+        "raw MSR retrieval",
+        "scoring or ranking people",
+        "staffing or employment recommendations",
+        "citing records it was not given"
+      ],
+      "human_gates": [
+        "Conflicts, gaps, and low confidence route to the Solutions reviewer"
+      ],
+      "stopping_rules": [
+        "Output rejected if it cites unknown records, omits a requested task, or contains personnel-judgment language"
+      ],
+      "failure_handling": "Output validation failure counts as a failed attempt; bounded retry then safe termination.",
+      "prompt_version": "expertise_v1",
+      "evaluation_evidence": "tests/test_workflow_b.py, tests/test_consequential_actions.py"
+    },
+    {
+      "agent_id": "AGT-TTO-COORDINATION",
+      "name": "TTO Coordination Agent",
+      "maturity": "Prototype pilot (CR-SC-2026-003): REQ-change planning only",
+      "prototype_status": "authorized",
+      "version": "0.1.0",
+      "owner": "Prototype developer (named in charter)",
+      "domain": "delivery",
+      "purpose": "Propose candidate REQ changes for recurring work that did not align to a work role's REQ (Tree of Thought thought generator); the planning service searches and scores the options, a human TTO lead endorses one plan, and the contract's PMO approves REQ changes.",
+      "inputs": [
+        "Clusters of potential-new-task statements from TTO-approved MSR inputs of one work-role REQ and period",
+        "The REQ's current tasks",
+        "Tasks elsewhere on the contract that the same statements align to"
+      ],
+      "outputs": [
+        "PlanCandidates (options per cluster), scored and pruned by deterministic code",
+        "Recommendation record pending TTO lead endorsement and PMO approval, Delivery-only"
+      ],
+      "permitted_sources": [
+        "delivery_store via the REQ planning service",
+        "reference_registry"
+      ],
+      "tools": [],
+      "permissions": [
+        "none beyond its inputs"
+      ],
+      "prohibited": [
+        "change a REQ baseline",
+        "approve or publish anything",
+        "assess, rank, or recommend actions about individual people",
+        "copy MSR text into task wording"
+      ],
+      "human_gates": [
+        "TTO lead (or a PMO teammate for contract PMO REQs) endorses one plan or rejects all",
+        "The contract's PMO is the approval authority for REQ changes: a PMO team member other than the endorser approves, returns, or rejects; an approved plan becomes a REQ change record for the next REQ version and the live baseline is not rewritten by the prototype"
+      ],
+      "stopping_rules": [
+        "Depth limit 3, beam width 3, node budget 60",
+        "Stop with no viable plan, and escalate, when every branch is pruned",
+        "Stop after max_attempts model failures for a cluster and record the failure"
+      ],
+      "failure_handling": "Bounded retry per cluster; a cluster whose generation fails has no options, so the search ends with no viable plan, the failure is recorded, and the run escalates to the requester.",
+      "prompt_version": "req_planning_v1",
+      "evaluation_evidence": "tests/test_req_planner.py"
+    }
+  ],
+  "excluded_agents": [
+    {
+      "name": "Strategy/TD Tracking Agent",
+      "maturity": "Future extension",
+      "prototype_status": "not authorized"
+    },
+    {
+      "name": "Growth Discovery Agent",
+      "maturity": "Future extension",
+      "prototype_status": "not authorized"
+    },
+    {
+      "name": "Foundry Build/Validation Agent",
+      "maturity": "Future extension",
+      "prototype_status": "not authorized"
+    },
+    {
+      "name": "PMO/Contract Agent",
+      "maturity": "Future extension",
+      "prototype_status": "not authorized",
+      "note": "PMO approval is a human gate in this prototype."
+    }
+  ]
+}

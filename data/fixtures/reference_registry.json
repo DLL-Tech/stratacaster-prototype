@@ -1,0 +1,77 @@
+{
+  "fixture_version": "prototype-reference/1.0",
+  "data_mode": "synthetic",
+  "note": "All identifiers are fictional. Bounded subset: 2 roles, 2 PMOs, 2 contracts, 3 TTOs, 6 REQ tasks. Selection rationale: the smallest set that exercises supported, ambiguous, contradictory, cross-PMO, restricted, and injected cases. It does not reproduce the Volume 06 career-pipeline catalog.",
+  "pmos": [
+    {"pmo_id": "SYN-PMO-001", "name": "Synthetic PMO Alpha"},
+    {"pmo_id": "SYN-PMO-002", "name": "Synthetic PMO Bravo"}
+  ],
+  "contracts": [
+    {"contract_id": "SYN-CONTRACT-001", "pmo_id": "SYN-PMO-001", "delivery_scope_id": "SYN-DELIVERY-A"},
+    {"contract_id": "SYN-CONTRACT-002", "pmo_id": "SYN-PMO-002", "delivery_scope_id": "SYN-DELIVERY-B"}
+  ],
+  "ttos": [
+    {"tto_id": "SYN-TTO-001", "contract_id": "SYN-CONTRACT-001", "title": "Synthetic API Modernization TTO"},
+    {"tto_id": "SYN-TTO-002", "contract_id": "SYN-CONTRACT-001", "title": "Synthetic Data Services TTO"},
+    {"tto_id": "SYN-TTO-003", "contract_id": "SYN-CONTRACT-002", "title": "Synthetic Security Operations TTO"}
+  ],
+  "roles": [
+    {"role_id": "SYN-ROLE-ENG", "title": "Synthetic Software Engineer"},
+    {"role_id": "SYN-ROLE-DATA", "title": "Synthetic Data Engineer"}
+  ],
+  "role_tasks": [
+    {"role_task_id": "SYN-ROLE-TASK-VALIDATE", "role_id": "SYN-ROLE-ENG", "title": "Validate interfaces against acceptance criteria"},
+    {"role_task_id": "SYN-ROLE-TASK-BUILD", "role_id": "SYN-ROLE-ENG", "title": "Build and document software components"},
+    {"role_task_id": "SYN-ROLE-TASK-PIPELINE", "role_id": "SYN-ROLE-DATA", "title": "Build and test data pipelines"},
+    {"role_task_id": "SYN-ROLE-TASK-QUALITY", "role_id": "SYN-ROLE-DATA", "title": "Assess and report data quality"}
+  ],
+  "req_tasks": [
+    {"req_task_id": "SYN-REQ-API-001", "tto_id": "SYN-TTO-001", "role_task_id": "SYN-ROLE-TASK-VALIDATE",
+     "title": "Execute API validation procedure and produce test report",
+     "keywords": ["api validation", "validation procedure", "test report"]},
+    {"req_task_id": "SYN-REQ-API-002", "tto_id": "SYN-TTO-001", "role_task_id": "SYN-ROLE-TASK-BUILD",
+     "title": "Document API endpoint specifications",
+     "keywords": ["endpoint specification", "api documentation", "openapi"]},
+    {"req_task_id": "SYN-REQ-DATA-001", "tto_id": "SYN-TTO-002", "role_task_id": "SYN-ROLE-TASK-PIPELINE",
+     "title": "Build and test ingestion pipeline",
+     "keywords": ["ingestion pipeline", "pipeline test", "pipeline"]},
+    {"req_task_id": "SYN-REQ-DATA-002", "tto_id": "SYN-TTO-002", "role_task_id": "SYN-ROLE-TASK-QUALITY",
+     "title": "Produce data-quality assessment report",
+     "keywords": ["data-quality", "data quality", "quality assessment"]},
+    {"req_task_id": "SYN-REQ-SEC-001", "tto_id": "SYN-TTO-003", "role_task_id": "SYN-ROLE-TASK-VALIDATE",
+     "title": "Execute vulnerability scan and record findings",
+     "keywords": ["vulnerability scan", "security scan", "scan findings"]},
+    {"req_task_id": "SYN-REQ-SEC-002", "tto_id": "SYN-TTO-003", "role_task_id": "SYN-ROLE-TASK-BUILD",
+     "title": "Harden service configuration baseline",
+     "keywords": ["configuration baseline", "hardening", "harden"]}
+  ],
+  "subjects": [
+    {"subject_id": "SYN-SUBJECT-001", "employee_reviewer_id": "SYN-REVIEWER-EMP-001"},
+    {"subject_id": "SYN-SUBJECT-002", "employee_reviewer_id": "SYN-REVIEWER-EMP-002"},
+    {"subject_id": "SYN-SUBJECT-003", "employee_reviewer_id": "SYN-REVIEWER-EMP-003"},
+    {"subject_id": "SYN-SUBJECT-004", "employee_reviewer_id": "SYN-REVIEWER-EMP-004"}
+  ],
+  "audiences": [
+    {"audience_id": "SYN-SOLUTIONS-DEMO", "members": ["SYN-SOLUTIONS-USER-001"]},
+    {"audience_id": "SYN-SOLUTIONS-OTHER", "members": ["SYN-SOLUTIONS-USER-002"]}
+  ],
+  "purposes": [
+    {"purpose_id": "requirement-evidence-explanation", "allowed": true},
+    {"purpose_id": "personnel-ranking", "allowed": false, "reason": "Prohibited: the prototype must not rank personnel."},
+    {"purpose_id": "staffing-recommendation", "allowed": false, "reason": "Prohibited: no staffing or employment outcomes."}
+  ],
+  "users": [
+    {"user_id": "SYN-REVIEWER-EMP-001", "kind": "human", "domain": "delivery", "roles": ["employee_reviewer"], "display": "Employee reviewer 001 (fictional)"},
+    {"user_id": "SYN-REVIEWER-EMP-002", "kind": "human", "domain": "delivery", "roles": ["employee_reviewer"], "display": "Employee reviewer 002 (fictional)"},
+    {"user_id": "SYN-REVIEWER-EMP-003", "kind": "human", "domain": "delivery", "roles": ["employee_reviewer"], "display": "Employee reviewer 003 (fictional)"},
+    {"user_id": "SYN-REVIEWER-EMP-004", "kind": "human", "domain": "delivery", "roles": ["employee_reviewer"], "display": "Employee reviewer 004 (fictional)"},
+    {"user_id": "SYN-DELIVERY-OPS-001", "kind": "human", "domain": "delivery", "roles": ["delivery_operator"], "display": "Delivery operator (fictional)"},
+    {"user_id": "SYN-REVIEWER-PMO-001", "kind": "human", "domain": "delivery", "roles": ["human_pmo_reviewer"], "pmo_authority": ["SYN-PMO-001"], "display": "PMO reviewer, PMO Alpha (fictional)"},
+    {"user_id": "SYN-REVIEWER-PMO-002", "kind": "human", "domain": "delivery", "roles": ["human_pmo_reviewer"], "pmo_authority": ["SYN-PMO-002"], "display": "PMO reviewer, PMO Bravo (fictional)"},
+    {"user_id": "SYN-SOLUTIONS-USER-001", "kind": "human", "domain": "solutions", "roles": ["solutions_requester", "solutions_reviewer"], "display": "Solutions requester, demo audience (fictional)"},
+    {"user_id": "SYN-SOLUTIONS-USER-002", "kind": "human", "domain": "solutions", "roles": ["solutions_requester"], "display": "Solutions requester, other audience (fictional)"},
+    {"user_id": "AGT-ROLE-EXECUTION", "kind": "agent", "domain": "delivery", "roles": ["agent"], "display": "Role Execution Agent"},
+    {"user_id": "AGT-SOLUTIONS-ORCHESTRATOR", "kind": "agent", "domain": "solutions", "roles": ["agent"], "display": "Solutions Orchestrator"},
+    {"user_id": "AGT-SOLUTIONS-EXPERTISE", "kind": "agent", "domain": "solutions", "roles": ["agent"], "display": "Solutions Expertise Agent"}
+  ]
+}

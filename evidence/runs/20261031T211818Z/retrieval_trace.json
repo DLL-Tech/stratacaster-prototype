@@ -1,0 +1,224 @@
+{
+  "query_id": "SIM-SEARCH-EVAL-001",
+  "correlation_id": "SYN-WF-B-SIM-SEARCH-EVAL-001",
+  "executed_at": "2026-10-23T17:00:00Z",
+  "question": "Who has confirmed that reported fixes were actually closed?",
+  "requester_id": "SIM-EMP-210",
+  "audience_id": "SIM-AUD-SOLUTIONS",
+  "purpose": "requirement-evidence-explanation",
+  "vector_store": "Chroma 1.5.9 (in-process, rebuilt from the evidence store)",
+  "embedding_model": "all-MiniLM-L6-v2 (ONNX build via chromadb DefaultEmbeddingFunction; 384 dimensions)",
+  "corpus": {
+    "requirement_tasks": 135,
+    "indexed_record_versions": 139,
+    "eligible_records": 138,
+    "excluded_records": 1,
+    "reference_fixture": "roster-reference/3.0+875ff7420c3e"
+  },
+  "filters": {
+    "hard": "gateway checks: published, current approval, current reviewed and TTO-approved source, unexpired, audience, purpose, restrictions"
+  },
+  "candidates": [
+    {
+      "id": "SIM-EVID-025:v1",
+      "kind": "evidence",
+      "similarity": 0.3967,
+      "distance": 0.6033
+    },
+    {
+      "id": "SIM-EVID-028:v1",
+      "kind": "evidence",
+      "similarity": 0.3967,
+      "distance": 0.6033
+    },
+    {
+      "id": "SIM-EVID-031:v1",
+      "kind": "evidence",
+      "similarity": 0.3967,
+      "distance": 0.6033
+    },
+    {
+      "id": "SIM-EVID-034:v1",
+      "kind": "evidence",
+      "similarity": 0.3967,
+      "distance": 0.6033
+    },
+    {
+      "id": "SIM-EVID-037:v1",
+      "kind": "evidence",
+      "similarity": 0.3967,
+      "distance": 0.6033
+    },
+    {
+      "id": "SIM-EVID-007:v1",
+      "kind": "evidence",
+      "similarity": 0.3741,
+      "distance": 0.6259
+    },
+    {
+      "id": "SIM-EVID-013:v1",
+      "kind": "evidence",
+      "similarity": 0.3741,
+      "distance": 0.6259
+    },
+    {
+      "id": "SIM-EVID-019:v1",
+      "kind": "evidence",
+      "similarity": 0.3741,
+      "distance": 0.6259
+    }
+  ],
+  "excluded_from_ranking": [
+    {
+      "id": "SIM-EVID-136:v1",
+      "similarity": 0.4046,
+      "reasons": [
+        "disposition revoked",
+        "approval not current for this version",
+        "approval revoked or rejected"
+      ]
+    }
+  ],
+  "rerank": {
+    "weights": {
+      "similarity": 0.6,
+      "authority": 0.25,
+      "recency": 0.15
+    },
+    "authority": {
+      "requirement": 1.0,
+      "own-req": 1.0,
+      "similar-work": 0.8,
+      "collaboration-opportunity": 0.7
+    },
+    "recency": "1 - age_days/31",
+    "scored": [
+      {
+        "id": "SIM-EVID-025:v1",
+        "similarity": 0.3967,
+        "authority": 1.0,
+        "recency": 0.9991,
+        "score": 0.6379
+      },
+      {
+        "id": "SIM-EVID-028:v1",
+        "similarity": 0.3967,
+        "authority": 1.0,
+        "recency": 0.9991,
+        "score": 0.6379
+      },
+      {
+        "id": "SIM-EVID-031:v1",
+        "similarity": 0.3967,
+        "authority": 1.0,
+        "recency": 0.9991,
+        "score": 0.6379
+      },
+      {
+        "id": "SIM-EVID-034:v1",
+        "similarity": 0.3967,
+        "authority": 1.0,
+        "recency": 0.9991,
+        "score": 0.6379
+      },
+      {
+        "id": "SIM-EVID-037:v1",
+        "similarity": 0.3967,
+        "authority": 1.0,
+        "recency": 0.9991,
+        "score": 0.6379
+      },
+      {
+        "id": "SIM-EVID-007:v1",
+        "similarity": 0.3741,
+        "authority": 1.0,
+        "recency": 0.9991,
+        "score": 0.6243
+      },
+      {
+        "id": "SIM-EVID-013:v1",
+        "similarity": 0.3741,
+        "authority": 1.0,
+        "recency": 0.9991,
+        "score": 0.6243
+      },
+      {
+        "id": "SIM-EVID-019:v1",
+        "similarity": 0.3741,
+        "authority": 1.0,
+        "recency": 0.9991,
+        "score": 0.6243
+      },
+      {
+        "id": "SIM-REQ-1-01-07",
+        "similarity": 0.3196,
+        "authority": 1.0,
+        "recency": 1.0,
+        "score": 0.5918
+      }
+    ]
+  },
+  "retry": {
+    "missing": "requirement",
+    "filter": {
+      "req_task_id": "SIM-REQ-1-01-07"
+    },
+    "found": [
+      "SIM-REQ-1-01-07"
+    ]
+  },
+  "coverage": [
+    "evidence",
+    "requirement"
+  ],
+  "status": "complete",
+  "results": [
+    {
+      "kind": "evidence",
+      "id": "SIM-EVID-025",
+      "version": 1,
+      "req_task_id": "SIM-REQ-1-01-07",
+      "alignment_scope": "own-req",
+      "summary": "Employee Felix Bennett (SIM-EMP-011, WR-002, SIM-TTO-1-01) reported work aligned to SIM-REQ-1-01-07: Closure evidence",
+      "published_at": "2026-10-23T16:20:00Z",
+      "approved_at": "2026-10-23T16:15:00Z",
+      "expires_at": "2026-11-23T15:00:00Z",
+      "score": 0.6379
+    },
+    {
+      "kind": "evidence",
+      "id": "SIM-EVID-028",
+      "version": 1,
+      "req_task_id": "SIM-REQ-1-01-07",
+      "alignment_scope": "own-req",
+      "summary": "Employee Clara Bennett (SIM-EMP-012, WR-002, SIM-TTO-1-01) reported work aligned to SIM-REQ-1-01-07: Closure evidence",
+      "published_at": "2026-10-23T16:20:00Z",
+      "approved_at": "2026-10-23T16:15:00Z",
+      "expires_at": "2026-11-23T15:00:00Z",
+      "score": 0.6379
+    },
+    {
+      "kind": "evidence",
+      "id": "SIM-EVID-031",
+      "version": 1,
+      "req_task_id": "SIM-REQ-1-01-07",
+      "alignment_scope": "own-req",
+      "summary": "Employee Micah Bennett (SIM-EMP-013, WR-002, SIM-TTO-1-01) reported work aligned to SIM-REQ-1-01-07: Closure evidence",
+      "published_at": "2026-10-23T16:20:00Z",
+      "approved_at": "2026-10-23T16:15:00Z",
+      "expires_at": "2026-11-23T15:00:00Z",
+      "score": 0.6379
+    },
+    {
+      "kind": "requirement",
+      "id": "SIM-REQ-1-01-07",
+      "title": "Closure evidence",
+      "tto_id": "SIM-TTO-1-01",
+      "eligible_records_for_task": 11,
+      "score": 0.5918
+    }
+  ],
+  "label": "PROTOTYPE OUTPUT - synthetic data - advisory and non-authoritative",
+  "escalations": [],
+  "trace_file": "C:\\Users\\david\\AppData\\Local\\Temp\\tmpnk038lxr\\roster\\traces\\SIM-SEARCH-EVAL-001-20261031T212139Z.json"
+}
