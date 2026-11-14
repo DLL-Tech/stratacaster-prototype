@@ -99,7 +99,7 @@ The first semantic-search test downloads the embedding model (about 80 MB). `scr
 | `EVAL-20261114T161516Z` | Offline stand-in | 232/232 tests, 11/11 checks on the current code (development evidence) |
 | `EVAL-20261114T161848Z` | Live Claude, current agent | **9 of 10 checks met.** Alignment precision and recall 1.00, citations 1.00, 0 blocked records published, 0 disclosures, 10/10 test cases, 5/5 workflow checks. **Coverage-status accuracy 0.67, NOT MET** (bar 0.80): the Expertise Agent rated two supported requirements as *partial*, a cautious error that escalates to a person. Reported as is, not tuned away. 143 calls, about $5.27 |
 
-Mock scores measure the **governance pipeline**, not model quality: the stand-in is keyword-based by design. The roster has no answer key, so a person scores a fixed-seed sample of live alignments: `evidence/sample_review/20261114T161848Z/sample_review.xlsx` (60 statements; built by `scripts/build_sample_review.py`).
+Mock scores measure the **governance pipeline**, not model quality: the stand-in is keyword-based by design. The roster has no answer key, so I scored a fixed-seed sample of 60 live results by hand (`evidence/sample_review/20261114T161848Z/sample_review_completed.xlsx`): **new-work calls 27/28 correct (96%, ±7 points); alignments 24/30 (80%, ±14), below the 90% bar.** All six alignment misses matched general working habits (handoffs, documenting next checks) to deliverable tasks. Next fixes: a working-practice category in the assessment prompt, and a code rule for partial versus supported coverage.
 
 ## Safety, reliability and human oversight
 
