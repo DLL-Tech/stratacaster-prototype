@@ -51,5 +51,5 @@ Roster-dataset coverage: the ten workbook test cases (TC-01 to TC-10) exercise P
 - The Delivery restricted execution path (Vol 07 §3.6.4) is implemented as routing only: gaps escalate to the Delivery owner. In-Delivery matching and export of approved results are not built.
 - Authentication is simulated by fixture lookup; there is no real identity provider.
 - The course rubric has not been mapped (see the Build Guide's rubric checklist).
-- Career pathways, Scala Lucida (FC-01, Increment 5; formerly LITE-BRITE), is out of scope and has no requirement rows. The name and the pronunciations for StrataCaster and Scala Lucida are recorded in CR-SC-2026-006 (Volumes 01, 08 and 00; accepted 2026-11-14).
+- Career pathways, Scala Lucida (FC-01, Increment 5), is out of scope and has no requirement rows. The name and the pronunciations for StrataCaster and Scala Lucida are recorded in CR-SC-2026-006 (Volumes 01, 08 and 00; accepted 2026-11-14).
 - Public release of this prototype (synthetic data, code and recorded evidence, for academic review) is permitted by CR-SC-2026-007 (Vol 01 §1.2, accepted 2026-11-14); `data/manifest.json` records the permitted use. Real or production data is never published.
