@@ -10,7 +10,7 @@ Increments are grouped by domain and data, not one per agent. Each adds one new 
 
 | # | Increment | Agents added | Entry criteria | Exit criteria |
 |---|---|---|---|---|
-| 1 | Delivery Evidence Core (built, 0.4.0) | Role Execution, Solutions Orchestrator, Solutions Expertise, TTO Coordination (pilot) | — | Recorded evaluation met (196/196 tests; 11/11 mock; 10/10 live Claude); Cadre decision in P1.08; CR-SC-2026-004 accepted |
+| 1 | Delivery Evidence Core (built, 0.4.0) | Role Execution, Solutions Orchestrator, Solutions Expertise, TTO Coordination (pilot) | — | Recorded evaluation met (196/196 tests; 11/11 mock; 10/10 live Claude); owner's gate decision in P1.08 (pending); CR-SC-2026-004 accepted |
 | 2 | Delivery Completion | PMO/Contract Agent | Prototype 1 proceed; its corpus CRs accepted | Contract-extraction precision and recall met on a labeled set; REQ versioning tests (FC-02 completed); live evaluation; P2.08 |
 | 3 | Strategy | Strategy/TD Tracking Agent | Prototype 2 proceed (or a decision to run 3 first) | MOP calculation tests; strategy evaluation set; disclosure and aggregation tests; P3.08 |
 | 4 | Growth and Foundry | Growth Discovery Agent; Foundry Build/Validation Agent | Prototype 3 proceed | Bid, pricing, and customer-contact deny tests; sandbox containment tests; Growth evaluation set; P4.08 |
@@ -68,7 +68,7 @@ Together these give Scala Lucida a governed, traceable stream of "what this pers
 What the corpus does not have is the Scala Lucida name and capability record (Volumes 01 and 08), or explicit permission for employee identity in filtered records (Volume 01 field list; Volume 04 §14 minimization and notice). The conflict noted above is with the prototype's scope, not with the operating model, which already permits career decision support with human approval.
 
 **When.** In future system development (beyond the course prototype), after:
-1. the Cadre's decision on this prototype;
+1. the owner's gate decision on this prototype (P1.08);
 2. the operating-model change (purposes, HR-facing audience, data protections) is approved.
 
 Treat it as its own capability with its own agent authorization; it must not be an extension of the Solutions Expertise Agent.
@@ -129,7 +129,7 @@ Recorded 2026-11-01 at the product owner's request so it is not lost. The toolin
 
 **When.**
 1. After the human-oversight-clause tracked changes (2026-11-01) are accepted, so the review sees the settled text.
-2. Before the Cadre demonstration, so the control matrix can be shown as governance evidence.
+2. Before the capstone presentation, so the control matrix can be shown as governance evidence.
 3. Again after each volume revision, to compare finding counts between runs.
 
 **How to run.** See README, "Queued: model-assisted governance review".

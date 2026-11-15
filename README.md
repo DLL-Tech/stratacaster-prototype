@@ -127,7 +127,7 @@ The design is specified in a twelve-volume operating-model corpus that is not in
 ## Limitations and next steps
 
 - **Data:** synthetic only, with simulated sign-in; a 270-person notional organization.
-- **Model judgment:** live alignments across the full roster have not had a human sample review yet; the current agent prompt (`role_execution_v3`) has no recorded live run.
+- **Model judgment:** a hand-scored sample of 60 live results (14 Nov) found new-work calls right 27 of 28 times but alignments right only 24 of 30, below the 90% bar; all six misses matched general working habits to deliverables. The current agent prompt (`role_execution_v3`) has one recorded live run, `EVAL-20261114T161848Z` (9 of 10 checks; coverage-status accuracy 0.67).
 - **Scope:** one of five planned increments. Next come Delivery Completion (a PMO/Contract agent, versioned REQs), Strategy (lines-of-effort tracking), Growth and Foundry, and **Scala Lucida** (career pathways from approved evidence, gated on governance decisions). See `docs/roadmap.md`.
 - No production-readiness, legal-compliance or institutional-approval claim is made.
 
