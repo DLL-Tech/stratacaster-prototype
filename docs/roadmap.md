@@ -38,7 +38,7 @@ Recorded 2026-11-05 at the product owner's direction. Prototype 1 is plain Pytho
 
 ## FC-01 · Scala Lucida: career pathways and expertise discovery
 
-**Name.** Scala Lucida, "the bright scale" (Latin *scala*, a ladder and a musical scale; *lucida*, bright), adopted 2026-11-12 in place of an earlier working name that is a third-party trademark. It joins the sound-themed family of StrataCaster, Vox Probata and Tritone. CR-SC-2026-006 (accepted 2026-11-14) renames it in the corpus (Volume 01 Sections 1.1 and 11, Volume 08 Section 6.1, and the alignment review) and records the pronunciations: StrataCaster is STRAT-uh-kas-ter, and Scala Lucida is SKAH-luh LOO-sih-duh. Still to follow once it is accepted: the build plan generators and the course deck, which still say LITE-BRITE.
+**Name.** Scala Lucida, "the bright scale" (Latin *scala*, a ladder and a musical scale; *lucida*, bright), adopted 2026-11-12 in place of an earlier working name that is a third-party trademark. It joins the sound-themed family of StrataCaster, Vox Probata and Tritone. CR-SC-2026-006 (accepted 2026-11-14) renames it in the corpus (Volume 01 Sections 1.1 and 11, Volume 08 Section 6.1, and the alignment review) and records the pronunciations: StrataCaster is STRAT-uh-kas-ter, and Scala Lucida is SKAH-luh LOO-sih-duh. The build plan and the other project documents were updated to match on 2026-11-15.
 
 **Goal.** The task alignments that Solutions receives are used beyond requirement coverage. They feed career-development tables that show what each person is doing now and has done before, alongside resume and certification data. On that basis, a new capability, **Scala Lucida**, would:
 - show pathways into new work-role pipelines;
